@@ -1,0 +1,55 @@
+.bg-grass{
+    background-color:#7c5;
+    color: white;
+}
+.bg-poison{
+    background-color: #a59;
+    color: white;
+}
+.bg-water{
+    background-color: #4592c4;
+    color: white;
+}
+
+.bg-fire{
+    background-color: #fd7d24;
+    color: white;
+}
+.bg-fly{
+    background-color: rgb(139, 139, 139);
+    color: white;
+}
+.bg-ghost{
+    background-color: #7b62a3;
+    color: white;
+}
+.bg-figther{
+    background-color: #d56723;
+    color: white;
+}
+.bg-steel{
+    background-color: #9eb7b8 ;
+    color: black;
+}
+
+
+footer p{
+margin-top: 15px;
+}
+
+.info-container{
+
+    transform: translateY(-55px
+    );
+}
+
+.mb-20{
+    margin-bottom: 20rem;
+}
+/* @media (max-width: 767.98px) {
+
+    .col-xs-12{
+
+        margin-bottom: 20rem;
+    }
+ } */
