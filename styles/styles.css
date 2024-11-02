@@ -1,3 +1,8 @@
+:root{
+
+    --font-pokeNfts-green:  #1E4D37;
+
+}
 .bg-grass{
     background-color:#7c5;
     color: white;
@@ -41,10 +46,15 @@
 .fs-h1{
     font-size: 4rem;
 }
+.text-pokeNfts-green{
+    
+    color: var(--font-pokeNfts-green);
+}
 
 .header-bg-gradient{
-    background: rgb(255,4,0);
-    background: linear-gradient(146deg, rgba(255,4,0,1) 50%, rgba(255,255,255,1) 50%);
+    background: rgb(112 180 148);
+    background: linear-gradient(270deg, rgba(112 180 148) 48%, rgba(255,255,255,1) 48%);
+
 }
 
 footer p{
@@ -60,6 +70,27 @@ margin-top: 15px;
 .mb-20{
     margin-bottom: 23rem;
 }
+.vh-85{
+    height: 85vh;
+}
+.shadow-custom{
+    -webkit-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+    -moz-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+    box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+}
+.nuevo-bg{
+    background: rgb(255,4,0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+}
+.bg-h3-gradient{
+    background: rgb(255,4,0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+}
+.about-us{
+    background: linear-gradient(180deg, #70B494 0%, #FEFFFF 100%);
+}
+
+
 
 @media (min-width: 768px) {
     .header-container-md {
