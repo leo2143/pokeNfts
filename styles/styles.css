@@ -1,7 +1,12 @@
 :root{
 
     --font-pokeNfts-green:  #1E4D37;
+    --principal-color:#70b494;
+    --call-to-action:#0517d6;
 
+}
+a:hover{
+    color: red;
 }
 .bg-grass{
     background-color:#7c5;
@@ -40,15 +45,24 @@
     background-color: #51c4e7 ;
     color: black;
 }
+.bg-principal{
+
+    background-color: var(--principal-color);
+}
 .top-2{
     bottom:3.5rem;
 }
 .fs-h1{
     font-size: 4rem;
 }
+
+
 .text-pokeNfts-green{
     
     color: var(--font-pokeNfts-green);
+}
+.about-text-container{
+    max-width: 700px;
 }
 
 .header-bg-gradient{
@@ -56,13 +70,17 @@
     background: linear-gradient(270deg, rgba(112 180 148) 48%, rgba(255,255,255,1) 48%);
 
 }
+.bg-carrucel-gradient{
+    background: rgb(190,237,215);
+    background: linear-gradient(180deg, rgba(190,237,215,1) 0%, rgba(112,180,148,1) 100%);
+}
 
 footer p{
 margin-top: 15px;
 }
 
 .info-container{
-
+    min-height: 400px;
     transform: translateY(-55px
     );
 }
@@ -70,8 +88,8 @@ margin-top: 15px;
 .mb-20{
     margin-bottom: 23rem;
 }
-.vh-85{
-    height: 85vh;
+.vh-50{
+    height: 50vh;
 }
 .shadow-custom{
     -webkit-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
@@ -90,6 +108,30 @@ margin-top: 15px;
     background: linear-gradient(180deg, #70B494 0%, #FEFFFF 100%);
 }
 
+.carrusel-img{
+    width: 250px;
+    z-index: 1;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 9999;
+}
+
+.mt-30{
+    margin-bottom: 19rem;
+}
+.artist-img{
+    width: 150px;
+}
+.our-artist-cards{
+    max-width: 360px;
+    border: #0517d63b 1px solid;
+
+}
+.card{
+    background: #40735bf7;
+
+}
 
 
 @media (min-width: 768px) {
@@ -100,8 +142,12 @@ margin-top: 15px;
    }
    .custom-container{
     width: 50% !important;
-
    }
+
+   .our-artist-cards{
+    max-width: 900px;
+}
+
 }
 @media (min-width: 1200px) {
 
