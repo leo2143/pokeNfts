@@ -19,39 +19,48 @@
 
 <body>
   <header class="d-flex flex-column justify-content-center">
-    <nav class="navbar navbar-expand-lg  bg-principal fixed-top shadow">
+    <nav class="navbar navbar-expand-lg bg-principal fixed-top shadow">
       <div class="container-fluid">
-
+        <!-- Botón de menú (para pantallas pequeñas) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand d-none d-lg-block" href="#home"><img src="imgs/icons/pokeNftPokemon.png"
-            alt="logo pokeNfts" /></a>
-
-
-
+    
+        <!-- Logo (centrado en pantallas grandes) -->
+        <a class="navbar-brand d-none d-lg-block" href="index.html">
+          <img src="imgs/icons/pokeNftPokemon.png" alt="logo pokeNfts"/>
+        </a>
+    
+        <!-- Ícono de carrito visible siempre fuera del menú desplegable -->
+        <a class="d-inline d-lg-none" href="#home">
+          <img src="imgs/icons/bx-cart.svg" alt="carrito" />
+        </a>
+    
+        <!-- Menú de navegación que se colapsa en pantallas pequeñas -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" aria-current="page" href="#home">Home</a>
+              <a class="nav-link text-white fs-5" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="#about">Sobre nosotros</a>
+              <a class="nav-link text-white fs-5" href="index.html">Sobre nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="#nfts">Nfts</a>
+              <a class="nav-link text-white fs-5" href="index.html">Nfts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="#our-artist">Nuestros artistas</a>
+              <a class="nav-link text-white fs-5" href="index.html">Nuestros artistas</a>
             </li>
           </ul>
         </div>
-
-        <a class="navbar-brand" href="#home"><img src="imgs/icons/bx-cart.svg" alt="logo pokeNfts" /></a>
-
+        <a class="d-inline d-none d-lg-block" href="#home">
+          <img src="imgs/icons/bx-cart.svg" alt="carrito" />
+        </a>
       </div>
+
     </nav>
+    
     <div id="carouse" class="carousel slide d-flex flex-column justify-content-center mt-4" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouse" data-bs-slide-to="0" class="active" aria-current="true"
@@ -176,7 +185,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/bulbasur.jpg" alt="Bulbasur" />
@@ -205,17 +214,17 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$200</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$200</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
-                          Comprar
+                        <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href='modal.html'">
+                        Comprar
                         </button>
                       </div>
                     </div>
@@ -224,7 +233,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/blastoice.jpg" alt="Blastoise" />
@@ -250,14 +259,14 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$500</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -270,7 +279,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/charizard.jpg" alt="Charizard" />
@@ -299,14 +308,14 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$500</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -319,7 +328,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/gengar.jpg" alt="Gengar" />
@@ -347,14 +356,14 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$700</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$700</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -366,7 +375,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/lucario.jpg" alt="Lucario " />
@@ -395,14 +404,14 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$800</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$800</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -415,7 +424,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/eevee.jpg" alt="Eevee" />
@@ -441,14 +450,14 @@
                 </div>
 
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$500</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -461,7 +470,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/lapras.jpg" alt="Lapras" />
@@ -489,14 +498,14 @@
                   </p>
                 </div>
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$300</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$300</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -508,7 +517,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/pikachu.jpg" alt="Pikachu" />
@@ -532,14 +541,14 @@
                   </p>
                 </div>
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$500</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3 ">$500</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -551,7 +560,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 mb-20">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
             <div class="position-relative">
               <div class="rounded-5 border">
                 <img class="img-fluid rounded-5" src="imgs/pokemons/garados.jpg" alt="Garados" />
@@ -576,14 +585,14 @@
                   </p>
                 </div>
                 <div class="container mt-4">
-                  <div class="row">
+                  <div class="row align-items-center gap-2 gap-md-0">
                     <div class="col-4">
                       <div class="d-flex flex-column">
-                        <span class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary">Precio</span>
-                        <span class="fw-medium fs-3 mt-2">$1000</span>
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3 ">$1000</span>
                       </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
                         <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
                           Comprar
@@ -610,7 +619,7 @@
 
 
         <img src="imgs/perfiles/profile-1.png" alt="artista numero 1" class="img-fluid artist-img order-2">
-        
+
         <div class="order-1 order-md-2 d-md-none">
           <h3 class="card-title">Lia Takahashi</h3>
           <span class="card-text">Diseñadora Digital</span>
@@ -635,8 +644,129 @@
             como el Pokémon en sí</p>
         </div>
       </div>
+    </section>
 
 
+    <section id="Faq" class="bg-dark pt-5 pb-5">
+      <div class="accordion container" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+              aria-expanded="true" aria-controls="collapse1">
+              ¿Qué es PokéNFTs?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1">
+            <div class="accordion-body">
+              PokéNFTs es una comunidad de artistas y fanáticos de Pokémon que crea ilustraciones exclusivas en formato
+              NFT, fusionando arte digital con la nostalgia por Pokémon.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              ¿Cómo puedo comprar un NFT en PokéNFTs?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2">
+            <div class="accordion-body">
+              Puedes adquirir NFTs a través de nuestra tienda en línea. Cada ilustración es única y de edición limitada,
+              así que asegúrate de comprar antes de que se agoten.
+            </div>
+          </div>
+
+          <h2 class="accordion-header" id="heading4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              ¿Cómo puedo estar al tanto de los próximos lanzamientos de NFT?
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4">
+            <div class="accordion-body">
+              Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir noticias sobre
+              lanzamientos, eventos y colaboraciones especiales.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              ¿Puedo vender mis NFTs de PokéNFTs?
+            </button>
+          </h2>
+          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5">
+            <div class="accordion-body">
+              Sí, puedes revender tus NFTs en mercados compatibles con blockchain, permitiéndote obtener beneficios de
+              tu colección.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              ¿Cómo se garantiza la autenticidad de cada NFT?
+            </button>
+          </h2>
+          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6">
+            <div class="accordion-body">
+              Cada NFT es autenticado y registrado en la blockchain, lo que asegura su exclusividad y procedencia.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading7">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+              ¿Qué medios de pago aceptan en la tienda?
+            </button>
+          </h2>
+          <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7">
+            <div class="accordion-body">
+              Aceptamos varios métodos de pago, incluyendo criptomonedas y tarjetas de crédito, para facilitar tu
+              compra.
+            </div>
+          </div>
+        </div>
+
+        <!-- Resto de las preguntas -->
+      </div>
+    </section>
+
+    <section id="form" class="bg-grass p-5">
+
+      <div class="container">
+        <h2></h2>
+      </div>
+
+      <form class="container my-5 p-4 bg-light rounded">
+        <h2 class="mb-4 text-black">¿Quieres ser uno de nuestros artistas?</h2>
+        <p class="text-black">ingresa tus datos y te enviaremos un mail para infomarte como puedes hacerlo</p>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingresa tu email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Ingresa tu teléfono" required>
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comentario</label>
+          <textarea class="form-control" id="comment" rows="4" placeholder="Escribe tu comentario" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+      
     </section>
   </main>
   <footer class="bg-dark">

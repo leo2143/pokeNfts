@@ -2,6 +2,8 @@
 
     --font-pokeNfts-green:  #1E4D37;
     --principal-color:#70b494;
+    --s:#70b4948c;
+
     --call-to-action:#0517d6;
 
 }
@@ -49,9 +51,7 @@ a:hover{
 
     background-color: var(--principal-color);
 }
-.top-2{
-    bottom:3.5rem;
-}
+
 .fs-h1{
     font-size: 4rem;
 }
@@ -61,6 +61,15 @@ a:hover{
     
     color: var(--font-pokeNfts-green);
 }
+
+.bg-pokeNfts-green{
+background-color: var(--principal-color);
+}
+.bg-pokeNfts-green-50{
+    background-color: var(--s);
+    }
+
+
 .about-text-container{
     max-width: 700px;
 }
@@ -85,8 +94,8 @@ margin-top: 15px;
     );
 }
 
-.mb-20{
-    margin-bottom: 23rem;
+.mb-cards{
+    padding-bottom: 37rem;
 }
 .vh-50{
     height: 50vh;
@@ -132,6 +141,11 @@ margin-top: 15px;
     background: #40735bf7;
 
 }
+
+@media (min-width: 400px) {
+    .mb-cards{
+        padding-bottom: 27rem;
+    } }
 
 
 @media (min-width: 768px) {
