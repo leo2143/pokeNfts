@@ -66,25 +66,29 @@
   <main>
 
     <section class="buy-product mt-5 d-flex flex-column gap-5 mb-5">
-      <div class="buy-product-container">
+      <div class="container-md buy-product-container d-flex flex-column flex-md-row mt-md-5">
+
         <div id="image-product" class="container">
           <img class="img-fluid
           " src="imgs/pokemons/bulbasur.jpg" alt="imagen del producto">
         </div>
-        <div class="container pt-2-" title="title product and price">
+        <div class="container d-flex flex-column justify-content-center align-items-center" id="info-container">
+        <div class="container pt-2" title="title product and price">
           <h2>Bulbasur</h2>
           <h3>$1222</h3>
         </div>
 
-        <div class="container" id="cuotas">
+        <div class="container pb-4 d-flex flex-column gap-3" id="cuotas">
           <div>
+          <div class="border rounded p-2 ">
             <img class="img-fluid" src="imgs/icons/visa-card.svg" alt="tarjeta visa icono">
             <img class="img-fluid" src="imgs/icons/master-card.svg" alt="">
           </div>
 
-          <div>
-            <p>6 cuotas sin interes de <strong>1600$</strong></p>
+          <div class="border rounded p-3">
+            <p class="d-inline">6 cuotas sin interes de <strong>1600$</strong></p>
           </div>
+        </div>
           <div>
             <a href="">Ver mas financiaciones</a>
           </div>
@@ -94,8 +98,9 @@
           <button class="btn btn-primary btn-lg">Comprar</button>
           <button class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar al Carrito</button>
         </div>
-
       </div>
+      </div>
+
       <div class="container" id="description">
         <h3>Descripcion</h3>
         <p>Este Bulbasaur está lleno de energía y siempre listo para ayudar a su entrenador a crecer. Adora tomar el sol
