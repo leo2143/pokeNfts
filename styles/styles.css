@@ -2,9 +2,10 @@
 
     --font-pokeNfts-green:  #1E4D37;
     --principal-color:#70b494;
-    --s:#70b4948c;
-
-    --call-to-action:#0517d6;
+    --call-to-action:#fed9b76e;
+    --call-to-action-25-percent:rgb(254 217 183 / 21%) !important;
+    --bs-body-bg:var(--call-to-action-25-percent);
+    --bs-primary-bg-subtle:var(--call-to-action)
 
 }
 a:hover{
@@ -58,7 +59,6 @@ a:hover{
 
 
 .text-pokeNfts-green{
-    
     color: var(--font-pokeNfts-green);
 }
 
@@ -97,8 +97,8 @@ margin-top: 15px;
 .mb-cards{
     padding-bottom: 37rem;
 }
-.vh-50{
-    height: 50vh;
+.vh-70{
+    height: 70vh;
 }
 .shadow-custom{
     -webkit-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
@@ -138,10 +138,18 @@ margin-top: 15px;
 
 }
 .card{
-    background: #40735bf7;
+    background: var(--call-to-action-25-percent);
+    border: solid var(--call-to-action-25-percent);
+}
+.accordion-item > h3 > button{
 
 }
-
+.accordion-item{
+    border: solid var(--call-to-action);
+}
+.text-primary{
+    color: var(--call-to-action);
+}
 @media (min-width: 400px) {
     .mb-cards{
         padding-bottom: 27rem;
