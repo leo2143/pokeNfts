@@ -1,3 +1,15 @@
+:root{
+
+    --font-pokeNfts-green:  #1E4D37;
+    --principal-color:#70b494;
+    --s:#70b4948c;
+
+    --call-to-action:#0517d6;
+
+}
+a:hover{
+    color: red;
+}
 .bg-grass{
     background-color:#7c5;
     color: white;
@@ -35,16 +47,41 @@
     background-color: #51c4e7 ;
     color: black;
 }
-.top-2{
-    bottom:3.5rem;
+.bg-principal{
+
+    background-color: var(--principal-color);
 }
+
 .fs-h1{
     font-size: 4rem;
 }
 
+
+.text-pokeNfts-green{
+    
+    color: var(--font-pokeNfts-green);
+}
+
+.bg-pokeNfts-green{
+background-color: var(--principal-color);
+}
+.bg-pokeNfts-green-50{
+    background-color: var(--s);
+    }
+
+
+.about-text-container{
+    max-width: 700px;
+}
+
 .header-bg-gradient{
-    background: rgb(255,4,0);
-    background: linear-gradient(146deg, rgba(255,4,0,1) 50%, rgba(255,255,255,1) 50%);
+    background: rgb(112 180 148);
+    background: linear-gradient(270deg, rgba(112 180 148) 48%, rgba(255,255,255,1) 48%);
+
+}
+.bg-carrucel-gradient{
+    background: rgb(190,237,215);
+    background: linear-gradient(180deg, rgba(190,237,215,1) 0%, rgba(112,180,148,1) 100%);
 }
 
 footer p{
@@ -52,14 +89,64 @@ margin-top: 15px;
 }
 
 .info-container{
-
+    min-height: 400px;
     transform: translateY(-55px
     );
 }
 
-.mb-20{
-    margin-bottom: 23rem;
+.mb-cards{
+    padding-bottom: 37rem;
 }
+.vh-50{
+    height: 50vh;
+}
+.shadow-custom{
+    -webkit-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+    -moz-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+    box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+}
+.nuevo-bg{
+    background: rgb(255,4,0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+}
+.bg-h3-gradient{
+    background: rgb(255,4,0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+}
+.about-us{
+    background: linear-gradient(180deg, #70B494 0%, #FEFFFF 100%);
+}
+
+.carrusel-img{
+    width: 250px;
+    z-index: 1;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 9999;
+}
+
+.mt-30{
+    margin-bottom: 19rem;
+}
+.artist-img{
+    width: 150px;
+}
+.our-artist-cards{
+    max-width: 360px;
+    border: #0517d63b 1px solid;
+
+}
+.card{
+    background: #40735bf7;
+
+}
+
+@media (min-width: 400px) {
+    .mb-cards{
+        padding-bottom: 27rem;
+    } }
+
 
 @media (min-width: 768px) {
     .header-container-md {
@@ -69,8 +156,12 @@ margin-top: 15px;
    }
    .custom-container{
     width: 50% !important;
-
    }
+
+   .our-artist-cards{
+    max-width: 900px;
+}
+
 }
 @media (min-width: 1200px) {
 

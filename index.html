@@ -1,610 +1,602 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
 
-    <link rel="stylesheet" href="styles/styles.css" />
-    <script src="scripts/main.js" defer></script>
-    <title>PokéNFTs</title>
-  </head>
-  <body>
-    <header class="header-bg-gradient header-bg-dektop vh-100  d-flex flex-column justify-content-center">
-      <div
-        class="p-2 text-light mb-5  container text-center d-flex flex-column justify-content-center align-items-center gap-5 flex-md-row"
-      >
-        <div
-          class="container d-flex flex-column align-items-left remove-container-md custom-container gap-5"
-        >
-          <div w>
-            <h1 class="text-white text-left fs-h1">PokéNFTs</h1>
-            <p class="fw-medium">
-              Ilustraciones exclusivas de tus personajes favoritos, reimaginadas
-              en NFTs únicos. Únete a la comunidad PokéNFTs y revive la
-              nostalgia con arte digital
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles/styles.css" />
+
+  <script src="scripts/main.js" defer></script>
+  <title>PokéNFTs</title>
+</head>
+
+<body>
+  <header class="d-flex flex-column justify-content-center">
+    <nav class="navbar navbar-expand-lg bg-principal fixed-top shadow">
+      <div class="container-fluid">
+        <!-- Botón de menú (para pantallas pequeñas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Logo (centrado en pantallas grandes) -->
+        <a class="navbar-brand d-none d-lg-block" href="index.html">
+          <img src="imgs/icons/pokeNftPokemon.png" alt="logo pokeNfts"/>
+        </a>
+    
+        <!-- Ícono de carrito visible siempre fuera del menú desplegable -->
+        <a class="d-inline d-lg-none" href="#home">
+          <img src="imgs/icons/bx-cart.svg" alt="carrito" />
+        </a>
+    
+        <!-- Menú de navegación que se colapsa en pantallas pequeñas -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html">Nfts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html">Nuestros artistas</a>
+            </li>
+          </ul>
+        </div>
+        <a class="d-inline d-none d-lg-block" href="#home">
+          <img src="imgs/icons/bx-cart.svg" alt="carrito" />
+        </a>
+      </div>
+
+    </nav>
+    
+    <div id="carouse" class="carousel slide d-flex flex-column justify-content-center mt-4" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner mt-4">
+        <div class="carousel-item active z-1">
+          <div class="d-block w-100 bg-carrucel-gradient">
+            <div
+              class="container vh-50 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
+              <div class="z-2 order-1 text-pokeNfts-green ">
+                <h1 class="fw-bold fs-1 ">Bienvenido a PokeNfts</h1>
+              </div>
+              <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
+                  src="imgs/carrusel/valor.png" alt="bulbasur en pokebola">
+              </div>
+              <div class="container fw-medium order-3 ">
+                <p>donde la nostalgia de Pokémon se convierte en arte exclusivo y coleccionable</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel-item z-1">
+          <div class="d-block w-100 bg-carrucel-gradient">
+            <div
+              class="container vh-50 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
+              <div class="z-2 order-1 ">
+                <h2 class="fw-bold fs-1 text-pokeNfts-green ">Explora una Nueva Dimensión</h2>
+              </div>
+              <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
+                  src="imgs/carrusel/charizard-carrucel.png" alt="charizard en un nido">
+              </div>
+              <div class="container  fw-medium order-3 ">
+                <p>Descubre NFT únicos inspirados en los Pokémon que amas</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel-item z-1">
+          <div class="d-block w-100 bg-carrucel-gradient">
+            <div
+              class="container vh-50 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
+              <div class="z-2 order-1 ">
+                <h2 class="fw-bold fs-1 text-pokeNfts-green">Atrapa el Arte</h2>
+              </div>
+              <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
+                  src="imgs/carrusel/bulbasur-pokeball.png" alt="bulbasur en pokebola">
+              </div>
+              <div class="container  fw-medium order-3 ">
+                <p>Captura cada etapa y ve cómo tu colección crece con exclusivas ilustraciones NFT</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouse" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouse" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </header>
+  <main>
+    <section id="about" class="about-us d-flex flex-column gap-5">
+      <div class="container d-flex flex-column flex-md-row gap-3">
+        <div class="container pt-5 fw-medium">
+          <h2 class="text-white fw-bold text-center text-md-left fs-1 text-md-start">Sobre Nosotros</h2>
+          <div class="about-text-container">
+            <p class="text-white fs-5">
+              PokéNFTs nació de la pasión compartida por Pokémon y el arte
+              digital, uniendo a un equipo de talentosos artistas y fanáticos
+              de la cultura Pokémon. Con la misión de reinventar estos
+              personajes icónicos en un formato coleccionable y exclusivo,
+              PokéNFTs se especializa en NFTs de alta calidad que capturan la
+              esencia de cada Pokémon en formas nuevas y sorprendentes. Desde
+              sus inicios, hemos trabajado en crear una plataforma donde
+              nostalgia y creatividad se fusionan para ofrecer una experiencia
+              única a nuestros coleccionistas.
             </p>
           </div>
-          <div class="d-block">
-            <button
-              class="btn btn-primary btn-lg"
-              type="submit"
-              onclick="location.href = '#nfts'"
-            >
-              Comprar
-            </button>
-          </div>
         </div>
 
-        <div class="w-50">
-          <img
-            class="img-fluid"
-            src="pokemons/ilustracion-pokemon.png"
-            alt="ilustracion-pokemon"
-          />
+        <div>
+          <img class="img-fluid" src="imgs/icons/about-us.png" alt="sobre nosotros diseño" />
         </div>
       </div>
-    </header>
-    <main>
-      <section id="nfts">
-        <div
-          class="container header-bg-gradient p-2 text-white mb-5 d-flex justify-content-center"
-        >
-          <h2 class="container">Nfts</h2>
+
+      <div class="container d-flex flex-column flex-md-row gap-3 fw-medium">
+        <div class="order-2 pt-5 order-md-1">
+          <img class="img-fluid" src="imgs/icons/pikachu.png" alt="pikachu con paleta de colores" />
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/bulbasur.jpg"
-                    alt="Bulbasur"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Bulbasur</h3>
+        <div class="container order-1 order-md-2">
+          <div class="text-pokeNfts-green fw-bold text-center fs-1 fw-bold text-md-start">
+            <h3 class="fw-bold fs-1">Filosofia</h3>
+          </div>
+          <div class="about-text-container fs-5">
+            <p>
+              Nuestra filosofía se basa en la autenticidad y el compromiso con
+              el arte. Nos esforzamos en brindar ilustraciones que no solo
+              destacan por su calidad visual, sino que también conectan
+              emocionalmente con nuestra comunidad. En PokéNFTs, creemos en la
+              importancia de construir una experiencia de colección memorable,
+              que refleje tanto la dedicación de nuestros artistas como el
+              valor que cada pieza tiene para quienes la adquieren. A través
+              de nuestro trabajo, buscamos unir a personas de todo el mundo
+              que compartan el amor por Pokémon y el arte digital.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="nfts" class="m-5">
+      <div class="container bg-h3-gradient p-2 text-white mb-5 d-flex justify-content-center">
+        <h2 class="container fw-bold">Nfts</h2>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/bulbasur.jpg" alt="Bulbasur" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Bulbasur</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-grass">
-                        Planta
-                      </p>
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-poison">
-                        Veneno
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este Bulbasaur está lleno de energía y siempre listo para
-                      ayudar a su entrenador a crecer. Adora tomar el sol y
-                      fortalecer su liana, aunque también disfruta de un buen
-                      descanso bajo las hojas. Con paciencia y cuidado, verás
-                      cómo florece junto a ti.
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-grass">
+                      Planta
+                    </p>
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-poison">
+                      Veneno
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Este Bulbasaur está lleno de energía y siempre listo para
+                    ayudar a su entrenador a crecer. Adora tomar el sol y
+                    fortalecer su liana, aunque también disfruta de un buen
+                    descanso bajo las hojas. Con paciencia y cuidado, verás
+                    cómo florece junto a ti.
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$200</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$200</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href='modal.html'">
+                        Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/blastoice.jpg"
-                    alt="Blastoise"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Blastoise</h3>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/blastoice.jpg" alt="Blastoise" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Blastoise</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-water">
-                        Agua
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este Blastoise está listo para defender a su entrenador
-                      con sus potentes cañones de agua. Aunque parece serio, le
-                      encanta jugar en el agua y hacer pequeños remolinos. Si
-                      eres su compañero, prepárate para muchas aventuras
-                      acuáticas.
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-water">
+                      Agua
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Este Blastoise está listo para defender a su entrenador
+                    con sus potentes cañones de agua. Aunque parece serio, le
+                    encanta jugar en el agua y hacer pequeños remolinos. Si
+                    eres su compañero, prepárate para muchas aventuras
+                    acuáticas.
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$500</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/charizard.jpg"
-                    alt="Charizard"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Charizard</h3>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/charizard.jpg" alt="Charizard" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Charizard</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-fire">
-                        Fuego
-                      </p>
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-fly">
-                        Volador
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este Charizard de espíritu indomable busca un entrenador
-                      que pueda igualar su valentía. Su llama arde intensamente,
-                      y aunque parece rudo, tiene un lado protector. ¡Solo
-                      cuidado con esas alas! A veces le gusta alzar el vuelo sin
-                      avisar.
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-fire">
+                      Fuego
+                    </p>
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-fly">
+                      Volador
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Este Charizard de espíritu indomable busca un entrenador
+                    que pueda igualar su valentía. Su llama arde intensamente,
+                    y aunque parece rudo, tiene un lado protector. ¡Solo
+                    cuidado con esas alas! A veces le gusta alzar el vuelo sin
+                    avisar.
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$500</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/gengar.jpg"
-                    alt="Gengar"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Gengar</h3>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/gengar.jpg" alt="Gengar" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Gengar</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-ghost">
-                        Fantasma
-                      </p>
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-poison">
-                        Veneno
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Gengar es travieso y siempre está buscando nuevas formas
-                      de jugarle bromas a su entrenador. Su risa fantasmal llena
-                      el aire, y disfruta desvaneciéndose en las sombras. Con
-                      él, tendrás diversión y misterio a partes iguales.
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-ghost">
+                      Fantasma
+                    </p>
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-poison">
+                      Veneno
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Gengar es travieso y siempre está buscando nuevas formas
+                    de jugarle bromas a su entrenador. Su risa fantasmal llena
+                    el aire, y disfruta desvaneciéndose en las sombras. Con
+                    él, tendrás diversión y misterio a partes iguales.
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$700</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$700</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/lucario.jpg"
-                    alt="Lucario "
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Lucario</h3>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/lucario.jpg" alt="Lucario " />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Lucario</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-figther"
-                      >
-                        Lucha
-                      </p>
-                      <p class="border ps-3 pe-3 rounded-3 fw-medium bg-steel">
-                        Acero
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Lucario es leal y siempre está en sintonía con las
-                      emociones de su entrenador. Su energía aura lo conecta
-                      profundamente con quienes le importan, y está dispuesto a
-                      luchar junto a ti. Solo necesita a alguien que comparta su
-                      sentido de justicia
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-figther">
+                      Lucha
+                    </p>
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-steel">
+                      Acero
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Lucario es leal y siempre está en sintonía con las
+                    emociones de su entrenador. Su energía aura lo conecta
+                    profundamente con quienes le importan, y está dispuesto a
+                    luchar junto a ti. Solo necesita a alguien que comparta su
+                    sentido de justicia
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$800</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$800</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/eevee.jpg"
-                    alt="Eevee"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Eevee</h3>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/eevee.jpg" alt="Eevee" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Eevee</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-secondary text-light"
-                      >
-                        Normal
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este Eevee es curioso y lleno de energía, siempre listo
-                      para explorar y descubrir cosas nuevas. Con su espíritu
-                      adaptable, busca un entrenador que lo ayude a crecer y
-                      evolucionar. Con amor y cuidado, ¡este Eevee está listo
-                      para cualquier aventura!
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-secondary text-light">
+                      Normal
                     </p>
                   </div>
+                </div>
+                <div>
+                  <p>
+                    Este Eevee es curioso y lleno de energía, siempre listo
+                    para explorar y descubrir cosas nuevas. Con su espíritu
+                    adaptable, busca un entrenador que lo ayude a crecer y
+                    evolucionar. Con amor y cuidado, ¡este Eevee está listo
+                    para cualquier aventura!
+                  </p>
+                </div>
 
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$500</span>
-                        </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$500</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/lapras.jpg"
-                    alt="Lapras"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Lapras</h3>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/lapras.jpg" alt="Lapras" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Lapras</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-water text-light"
-                      >
-                        Agua
-                      </p>
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-ice text-black"
-                      >
-                        Hielo
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Lapras es sereno y le encanta navegar tranquilamente sobre
-                      el agua. Es muy protector con aquellos que ama y busca un
-                      entrenador que valore la paz y la conexión con la
-                      naturaleza. Prepárate para un viaje tranquilo y lleno de
-                      armonía a su lado.
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-water text-light">
+                      Agua
+                    </p>
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-ice text-black">
+                      Hielo
                     </p>
                   </div>
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$300</span>
-                        </div>
+                </div>
+                <div>
+                  <p>
+                    Lapras es sereno y le encanta navegar tranquilamente sobre
+                    el agua. Es muy protector con aquellos que ama y busca un
+                    entrenador que valore la paz y la conexión con la
+                    naturaleza. Prepárate para un viaje tranquilo y lleno de
+                    armonía a su lado.
+                  </p>
+                </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3">$300</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/pikachu.jpg"
-                    alt="Pikachu"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Pikachu</h3>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/pikachu.jpg" alt="Pikachu" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Pikachu</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-warning text-dark"
-                      >
-                        Electrico
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este Pikachu es curioso y lleno de energía, Le encanta
-                      correr y jugar, pero ten cuidado con sus descargas
-                      eléctricas cuando se emociona demasiado. Con el compañero
-                      adecuado, ¡será el aliado perfecto para cualquier viaje!
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-warning text-dark">
+                      Electrico
                     </p>
                   </div>
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$500</span>
-                        </div>
+                </div>
+                <div>
+                  <p>
+                    Este Pikachu es curioso y lleno de energía, Le encanta
+                    correr y jugar, pero ten cuidado con sus descargas
+                    eléctricas cuando se emociona demasiado. Con el compañero
+                    adecuado, ¡será el aliado perfecto para cualquier viaje!
+                  </p>
+                </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3 ">$500</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-20">
-              <div class="position-relative">
-                <div class="rounded-5 border">
-                  <img
-                    class="img-fluid rounded-5"
-                    src="/pokemons/garados.jpg"
-                    alt="Garados"
-                  />
-                </div>
-                <div
-                  class="bg-light rounded-5 border position-absolute p-4 shadow info-container"
-                >
-                  <div>
-                    <h3>Garados</h3>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-cards">
+            <div class="position-relative">
+              <div class="rounded-5 border">
+                <img class="img-fluid rounded-5" src="imgs/pokemons/garados.jpg" alt="Garados" />
+              </div>
+              <div class="bg-light rounded-5 border position-absolute p-4 shadow info-container">
+                <div>
+                  <h3>Garados</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                      <p
-                        class="border ps-3 pe-3 rounded-3 fw-medium bg-water text-light"
-                      >
-                        Agua
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      Este es un Gyarados feroz y majestuoso, siempre en busca
-                      de un entrenador que pueda canalizar su energía
-                      desbordante. Le encanta nadar a gran velocidad y causar
-                      oleadas en su paso, así que prepárate para tener aventuras
-                      emocionantes con él
+                  <div class="d-flex flex-wrap gap-2">
+                    <p class="border ps-3 pe-3 rounded-3 fw-medium bg-water text-light">
+                      Agua
                     </p>
                   </div>
-                  <div class="container mt-4">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="d-flex flex-column">
-                          <span
-                            class="fw-medium fs-6 m-0 p-0 position-absolute top-2 text-secondary"
-                            >Precio</span
-                          >
-                          <span class="fw-medium fs-3 mt-2">$1000</span>
-                        </div>
+                </div>
+                <div>
+                  <p>
+                    Este es un Gyarados feroz y majestuoso, siempre en busca
+                    de un entrenador que pueda canalizar su energía
+                    desbordante. Le encanta nadar a gran velocidad y causar
+                    oleadas en su paso, así que prepárate para tener aventuras
+                    emocionantes con él
+                  </p>
+                </div>
+                <div class="container mt-4">
+                  <div class="row align-items-center gap-2 gap-md-0">
+                    <div class="col-4">
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium fs-6 m-0 p-0 text-secondary">Precio</span>
+                        <span class="fw-medium fs-3 ">$1000</span>
                       </div>
-                      <div class="col-8">
-                        <div class="d-grid gap-2">
-                          <button
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                            onclick="mostrarAlerta()"
-                          >
-                            Comprar
-                          </button>
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit" onclick="mostrarAlerta()">
+                          Comprar
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -613,44 +605,191 @@
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <footer
-      class="bg-dark">
-      <div class="container bg-dark text-light text-center d-flex flex-column justify-content-between align-items-center p-5 fw-medium fs-4 flex-lg-row">
+      </div>
+    </section>
+    <section id="our-artist" class="bg-principal pt-4 pb-4">
+
+
+      <div class="container text-center text-light ">
+        <h2>Nuestros artistas</h2>
+      </div>
+
       <div
-        class="d-flex justify-content-center gap-5 align-items-center text-center mb-1"
-      >
+        class="container  d-flex flex-column align-items-center mt-5  gap-3 p-3 our-artist-cards flex-md-row text-light card justify-content-center align-items-center">
+
+
+        <img src="imgs/perfiles/profile-1.png" alt="artista numero 1" class="img-fluid artist-img order-2">
+
+        <div class="order-1 order-md-2 d-md-none">
+          <h3 class="card-title">Lia Takahashi</h3>
+          <span class="card-text">Diseñadora Digital</span>
+        </div>
+
+        <div class="order-1 order-md-2 d-none d-md-flex flex-column">
+          <div class="container">
+            <h3 class="card-title">Lia Takahashi</h3>
+          </div>
+          <p class="card-body">Para mí, reinterpretar Pokémon es explorar sus esencias y darles vida en un nuevo
+            contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan viva
+            como el Pokémon en sí</p>
+
+        </div>
+
+
+
+
+        <div class="container order-3 d-md-none">
+          <p class="card-body">Para mí, reinterpretar Pokémon es explorar sus esencias y darles vida en un nuevo
+            contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan viva
+            como el Pokémon en sí</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="Faq" class="bg-dark pt-5 pb-5">
+      <h2 class="text-light container">Preguntas Frecuentes</h2>
+      <div class="accordion container" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="heading1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+              aria-expanded="true" aria-controls="collapse1">
+              ¿Qué es PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1">
+            <div class="accordion-body">
+              PokéNFTs es una comunidad de artistas y fanáticos de Pokémon que crea ilustraciones exclusivas en formato
+              NFT, fusionando arte digital con la nostalgia por Pokémon.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="heading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              ¿Cómo puedo comprar un NFT en PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2">
+            <div class="accordion-body">
+              Puedes adquirir NFTs a través de nuestra tienda en línea. Cada ilustración es única y de edición limitada,
+              así que asegúrate de comprar antes de que se agoten.
+            </div>
+          </div>
+
+          <h3 class="accordion-header" id="heading4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              ¿Cómo puedo estar al tanto de los próximos lanzamientos de NFT?
+            </button>
+          </h3>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4">
+            <div class="accordion-body">
+              Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir noticias sobre
+              lanzamientos, eventos y colaboraciones especiales.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="heading5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              ¿Puedo vender mis NFTs de PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5">
+            <div class="accordion-body">
+              Sí, puedes revender tus NFTs en mercados compatibles con blockchain, permitiéndote obtener beneficios de
+              tu colección.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="heading6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              ¿Cómo se garantiza la autenticidad de cada NFT?
+            </button>
+          </h3>
+          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6">
+            <div class="accordion-body">
+              Cada NFT es autenticado y registrado en la blockchain, lo que asegura su exclusividad y procedencia.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="heading7">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+              ¿Qué medios de pago aceptan en la tienda?
+            </button>
+          </h3>
+          <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7">
+            <div class="accordion-body">
+              Aceptamos varios métodos de pago, incluyendo criptomonedas y tarjetas de crédito, para facilitar tu
+              compra.
+            </div>
+          </div>
+        </div>
+
+        <!-- Resto de las preguntas -->
+      </div>
+    </section>
+
+    <section id="form" class="bg-grass p-5">
+
+      <div class="container">
+        <h2></h2>
+      </div>
+
+      <form class="container my-5 p-4 bg-light rounded">
+        <h2 class="mb-4 text-black">¿Quieres ser uno de nuestros artistas?</h2>
+        <p class="text-black">ingresa tus datos y te enviaremos un mail para infomarte como puedes hacerlo</p>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingresa tu email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Ingresa tu teléfono" required>
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comentario</label>
+          <textarea class="form-control" id="comment" rows="4" placeholder="Escribe tu comentario" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+      
+    </section>
+  </main>
+  <footer class="bg-dark">
+    <div
+      class="container bg-dark text-light text-center d-flex flex-column justify-content-between align-items-center p-5 fw-medium fs-4 flex-lg-row">
+      <div class="d-flex justify-content-center gap-5 align-items-center text-center mb-1">
         <div class="">
           <a href="https://www.instagram.com/leo.orellana_/">
-            <img
-              class="img-fluid"
-              src="imgs-footer/instagram-logo.svg"
-              alt="icono de instagram"
-            />
+            <img class="img-fluid" src="imgs/footer/instagram-logo.svg" alt="icono de instagram" />
           </a>
         </div>
         <div class="">
           <p>Leonardo Orellana</p>
         </div>
         <div class="">
-          <a
-            href="https://www.linkedin.com/in/leonardo-orellana-998740222/?originalSubdomain=ar"
-          >
-            <img
-              class="img-fluid"
-              src="imgs-footer/linkeding-logo.svg"
-              alt="linkedin logo"
-            />
+          <a href="https://www.linkedin.com/in/leonardo-orellana-998740222/?originalSubdomain=ar">
+            <img class="img-fluid" src="imgs/footer/linkeding-logo.svg" alt="linkedin logo" />
           </a>
         </div>
       </div>
       <div class="">
-        <img
-          class="img-fluid rounded-5"
-          src="imgs-footer/foto-de-mi.svg"
-          alt="foto retrato propia"
-        />
+        <img class="img-fluid rounded-5" src="imgs/footer/foto-de-mi.svg" alt="foto retrato propia" />
       </div>
       <div class="">
         <div class="">
@@ -658,6 +797,11 @@
         </div>
       </div>
     </div>
-    </footer>
-  </body>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+  integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
 </html>
