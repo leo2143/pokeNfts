@@ -1,180 +1,260 @@
-:root{
+:root {
 
-    --font-pokeNfts-green:  #1E4D37;
-    --principal-color:#70b494;
-    --call-to-action:#fed9b76e;
-    --call-to-action-25-percent:rgb(254 217 183 / 21%) !important;
-    --bs-body-bg:var(--call-to-action-25-percent);
-    --bs-primary-bg-subtle:var(--call-to-action)
+    --font-color-pokeNfts: rgb(51 43 43);
+    --principal-color: #70b494;
+    --call-to-action: #FFE8D1;
+    --call-to-action-light: #ffe8d1b4;
+
+    --call-to-action-hover: #d9cdc0;
+    --call-to-action-parcial: #ffe8d130;
+    --bs-accordion-btn-bg: unset;
+    --bs-accordion-bg: unset;
+    /* --call-to-action-25-percent:#ffe8d181 !important; */
+
 
 }
-a:hover{
+
+a:hover {
     color: red;
 }
-.bg-grass{
-    background-color:#7c5;
+
+.bg-grass {
+    background-color: #7c5;
     color: white;
 }
-.bg-poison{
+
+.bg-poison {
     background-color: #a59;
     color: white;
 }
-.bg-water{
+
+.bg-water {
     background-color: #4592c4;
     color: white;
 }
 
-.bg-fire{
+.bg-fire {
     background-color: #fd7d24;
     color: white;
 }
-.bg-fly{
+
+.bg-fly {
     background-color: rgb(139, 139, 139);
     color: white;
 }
-.bg-ghost{
+
+.bg-ghost {
     background-color: #7b62a3;
     color: white;
 }
-.bg-figther{
+
+.bg-figther {
     background-color: #d56723;
     color: white;
 }
-.bg-steel{
-    background-color: #9eb7b8 ;
-    color: black;
-}
-.bg-ice{
-    background-color: #51c4e7 ;
-    color: black;
-}
-.bg-principal{
 
+.bg-steel {
+    background-color: #9eb7b8;
+    color: black;
+}
+
+.bg-ice {
+    background-color: #51c4e7;
+    color: black;
+}
+
+.bg-principal {
     background-color: var(--principal-color);
 }
 
-.fs-h1{
+.text-pokeNfts-color {
+    color: var(--font-color-pokeNfts);
+}
+
+.bg-pokeNfts-green {
+    background-color: var(--principal-color);
+}
+
+.bg-call-to-action {
+    background-color: var(--call-to-action);
+}
+
+.bg-call-to-action-parcial {
+    background-color: var(--call-to-action-parcial);
+}
+
+
+.bg-call-to-action {
+    background-color: var(--call-to-action-parcial);
+    border-color: var(--call-to-action);
+    color: var(--font-color-pokeNfts);
+}
+
+.form-control {
+    background-color: #ffffff63;
+    border: 1px solid var(--call-to-action);
+    color: var(--font-color-pokeNfts);
+}
+
+.fs-h1 {
     font-size: 4rem;
 }
 
-
-.text-pokeNfts-green{
-    color: var(--font-pokeNfts-green);
-}
-
-.bg-pokeNfts-green{
-background-color: var(--principal-color);
-}
-.bg-pokeNfts-green-50{
+.bg-pokeNfts-green-50 {
     background-color: var(--s);
-    }
+}
 
 
-.about-text-container{
+.about-text-container {
     max-width: 700px;
 }
 
-.header-bg-gradient{
+.header-bg-gradient {
     background: rgb(112 180 148);
-    background: linear-gradient(270deg, rgba(112 180 148) 48%, rgba(255,255,255,1) 48%);
+    background: linear-gradient(270deg, rgba(112 180 148) 48%, rgba(255, 255, 255, 1) 48%);
 
 }
-.bg-carrucel-gradient{
-    background: rgb(190,237,215);
-    background: linear-gradient(180deg, rgba(190,237,215,1) 0%, rgba(112,180,148,1) 100%);
+
+.bg-carrucel-gradient {
+    background: rgb(190, 237, 215);
+    background: linear-gradient(180deg, rgba(190, 237, 215, 1) 0%, rgba(112, 180, 148, 1) 100%);
 }
 
-footer p{
-margin-top: 15px;
+footer p {
+    margin-top: 15px;
 }
 
-.info-container{
+.info-container {
     min-height: 400px;
-    transform: translateY(-55px
-    );
+    transform: translateY(-55px);
 }
 
-.mb-cards{
+.mb-cards {
     padding-bottom: 37rem;
 }
-.vh-70{
+
+.vh-70 {
     height: 70vh;
 }
-.shadow-custom{
-    -webkit-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
-    -moz-box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
-    box-shadow: -5px 15px 34px 16px rgba(0,0,0,0.45);
+
+.shadow-custom {
+    -webkit-box-shadow: -5px 15px 34px 16px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: -5px 15px 34px 16px rgba(0, 0, 0, 0.45);
+    box-shadow: -5px 15px 34px 16px rgba(0, 0, 0, 0.45);
 }
-.nuevo-bg{
-    background: rgb(255,4,0);
-    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+
+.nuevo-bg {
+    background: rgb(255, 4, 0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255, 255, 255, 1) 50%);
 }
-.bg-h3-gradient{
-    background: rgb(255,4,0);
-    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255,255,255,1) 50%);
+
+.bg-h3-gradient {
+    background: rgb(255, 4, 0);
+    background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255, 255, 255, 1) 50%);
 }
-.about-us{
+
+.about-us {
     background: linear-gradient(180deg, #70B494 0%, #FEFFFF 100%);
 }
 
-.carrusel-img{
+.carrusel-img {
     width: 250px;
     z-index: 1;
 }
+
 .carousel-control-prev,
 .carousel-control-next {
     z-index: 9999;
 }
 
-.mt-30{
+.mt-30 {
     margin-bottom: 19rem;
 }
-.artist-img{
+
+.artist-img {
     width: 150px;
 }
-.our-artist-cards{
+
+.our-artist-cards {
     max-width: 360px;
-    border: #0517d63b 1px solid;
 
 }
-.card{
-    background: var(--call-to-action-25-percent);
-    border: solid var(--call-to-action-25-percent);
-}
-.accordion-item > h3 > button{
 
+.card {
+    background-color: var(--call-to-action-parcial);
+    border: 1px solid var(--call-to-action);
 }
-.accordion-item{
+
+.accordion-button {
+    background-color: var(--call-to-action-parcial);
+}
+
+.accordion-item {
+    background-color: var(--call-to-action-parcial);
     border: solid var(--call-to-action);
 }
-.text-primary{
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--call-to-action);
+    color: unset;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-body{
+    background-color: var(--call-to-action-light);
+    box-shadow: black;
+}
+
+.text-primary {
     color: var(--call-to-action);
 }
+.btn-custom {
+    background-color: var(--call-to-action);
+    border-color: var(--call-to-action-parcial);
+    color: var(--font-color-pokeNfts); 
+    font-weight: 500;
+  }
+  
+  .btn-custom:hover {
+    background-color: var(--call-to-action-hover); 
+  }
+  .form-background{
+    width: 20%;
+    background-image: url(../imgs/icons/pikachu-computadora.png
+    );
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+
 @media (min-width: 400px) {
-    .mb-cards{
+    .mb-cards {
         padding-bottom: 27rem;
-    } }
+    }
+}
 
 
 @media (min-width: 768px) {
     .header-container-md {
-        background: rgb(255,4,0);
-        background: linear-gradient(120deg, rgba(255,4,0,1) 66%, rgba(255,255,255,1) 66%);
-        
-   }
-   .custom-container{
-    width: 50% !important;
-   }
+        background: rgb(255, 4, 0);
+        background: linear-gradient(120deg, rgba(255, 4, 0, 1) 66%, rgba(255, 255, 255, 1) 66%);
 
-   .our-artist-cards{
-    max-width: 900px;
+    }
+
+    .custom-container {
+        width: 50% !important;
+    }
+
+    .our-artist-cards {
+        max-width: 900px;
+    }
+
 }
 
-}
 @media (min-width: 1200px) {
 
-    .custom-container{
+    .custom-container {
         width: 40% !important;
-       }
+    }
 }
-
