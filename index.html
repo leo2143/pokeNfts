@@ -36,17 +36,20 @@
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5" aria-current="page" href="index.html">Home</a>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link text-pokeNfts-color fs-5 fw-medium" aria-current="page" href="#carouse">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="index.html">Sobre nosotros</a>
+              <a class="nav-link text-pokeNfts-color fs-5 fw-medium" href="#about">Sobre nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="index.html">Nfts</a>
+              <a class="nav-link text-pokeNfts-color fs-5 fw-medium" href="#nfts">Nfts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="index.html">Nuestros artistas</a>
+              <a class="nav-link text-pokeNfts-color fs-5 fw-medium" href="#our-artist">Nuestros artistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-pokeNfts-color fs-5 fw-medium" href="#Faq">Preguntas frecuentes</a>
             </li>
           </ul>
         </div>
@@ -54,10 +57,9 @@
           <img src="imgs/icons/bx-cart.svg" alt="carrito" />
         </a>
       </div>
-
     </nav>
 
-    <div id="carouse" class="carousel slide d-flex flex-column justify-content-center mt-4" data-bs-ride="carousel">
+    <div id="carouse" class="carousel slide d-flex flex-column justify-content-center z-1" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouse" data-bs-slide-to="0" class="active" aria-current="true"
           aria-label="Slide 1"></button>
@@ -68,14 +70,14 @@
         <div class="carousel-item active z-1">
           <div class="d-block w-100 bg-carrucel-gradient">
             <div
-              class="container vh-70 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
+              class="container vh-70 d-flex flex-column justify-content-center text-pokeNfts-color text-center align-items-center gap-2">
               <div class="z-2 order-1 text-pokeNfts-green ">
-                <h1 class="fw-bold fs-1 ">Bienvenido a PokeNfts</h1>
+                <h1 class="fw-bold fs-1 text-pokeNfts-green">Bienvenido a PokeNfts</h1>
               </div>
               <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
                   src="imgs/carrusel/valor.png" alt="bulbasur en pokebola">
               </div>
-              <div class="container fw-medium order-3 ">
+              <div class="container fw-medium order-3 fs-5">
                 <p>donde la nostalgia de Pokémon se convierte en arte exclusivo y coleccionable</p>
               </div>
             </div>
@@ -86,14 +88,14 @@
           <div class="d-block w-100 bg-carrucel-gradient">
             <div
               class="container vh-70 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
-              <div class="z-2 order-1 ">
-                <h2 class="fw-bold fs-1 text-pokeNfts-green ">Explora una Nueva Dimensión</h2>
+              <div class="z-2 order-1 fw-bold fs-1 text-pokeNfts-color ">
+                <h2 class="fw-bold fs-1 text-pokeNfts-green">Explora una Nueva Dimensión</h2>
               </div>
               <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
                   src="imgs/carrusel/charizard-carrucel.png" alt="charizard en un nido">
               </div>
               <div class="container  fw-medium order-3 ">
-                <p>Descubre NFT únicos inspirados en los Pokémon que amas</p>
+                <p class="fw-medium text-pokeNfts-color fs-5">Descubre NFT únicos inspirados en los Pokémon que amas</p>
               </div>
             </div>
           </div>
@@ -104,13 +106,14 @@
             <div
               class="container vh-70 d-flex flex-column justify-content-center text-light text-center align-items-center gap-2">
               <div class="z-2 order-1 ">
-                <h2 class="fw-bold fs-1 text-pokeNfts-green">Atrapa el Arte</h2>
+                <h2 class="fw-bold fs-1 text-pokeNfts-color">Atrapa el Arte</h2>
               </div>
               <div class="container d-flex justify-content-center z-1 order-2"><img class="img-fluid carrusel-img"
                   src="imgs/carrusel/bulbasur-pokeball.png" alt="bulbasur en pokebola">
               </div>
               <div class="container  fw-medium order-3 ">
-                <p>Captura cada etapa y ve cómo tu colección crece con exclusivas ilustraciones NFT</p>
+                <p class="text-pokeNfts-color fs-5">Captura cada etapa y ve cómo tu colección crece con exclusivas
+                  ilustraciones NFT</p>
               </div>
             </div>
           </div>
@@ -125,14 +128,18 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+    </div>
   </header>
   <main>
     <section id="about" class="about-us d-flex flex-column gap-5">
-      <div class="container d-flex flex-column flex-md-row gap-3">
+      <div class="container d-flex flex-column flex-lg-row gap-3">
         <div class="container pt-5 fw-medium">
-          <h2 class="text-white fw-bold text-center text-md-left fs-1 text-md-start">Sobre Nosotros</h2>
+          <div class="container bg-h3-gradient-call-action p-2 mb-4">
+            <h2 class="fw-bold fs-2 fw-bold text-center text-md-left fs-2 text-md-start">Sobre Nosotros</h2>
+          </div>
+
           <div class="about-text-container">
-            <p class="text-white fs-5">
+            <p class="fs-5">
               PokéNFTs nació de la pasión compartida por Pokémon y el arte
               digital, uniendo a un equipo de talentosos artistas y fanáticos
               de la cultura Pokémon. Con la misión de reinventar estos
@@ -151,16 +158,17 @@
         </div>
       </div>
 
-      <div class="container d-flex flex-column flex-md-row gap-3 fw-medium">
-        <div class="order-2 pt-5 order-md-1">
+      <div class="container d-flex flex-column flex-lg-row gap-3 fw-medium">
+        <div class="order-2 pt-5 order-lg-1">
           <img class="img-fluid" src="imgs/icons/pikachu.png" alt="pikachu con paleta de colores" />
         </div>
-        <div class="container order-1 order-md-2">
-          <div class="text-pokeNfts-green fw-bold text-center fs-1 fw-bold text-md-start">
-            <h3 class="fw-bold fs-1">Filosofia</h3>
+        <div class="container order-1 order-lg-2">
+          <div
+            class="text-pokeNfts-green fw-bold text-center fs-2 fw-bold text-md-start bg-h3-gradient-call-action p-2 mb-4 container">
+            <h2 class="fw-bold fs-2">Filosofia</h2>
           </div>
           <div class="about-text-container fs-5">
-            <p>
+            <p class="text-pokeNfts-color">
               Nuestra filosofía se basa en la autenticidad y el compromiso con
               el arte. Nos esforzamos en brindar ilustraciones que no solo
               destacan por su calidad visual, sino que también conectan
@@ -177,7 +185,7 @@
     </section>
     <section id="nfts" class="m-5">
       <div class="container bg-h3-gradient p-2 text-white mb-5 d-flex justify-content-center">
-        <h2 class="container fw-bold">Nfts</h2>
+        <h2 class="container fw-bold ">Nfts</h2>
       </div>
       <div class="container">
         <div class="row">
@@ -219,8 +227,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="button"
-                          onclick="window.location.href='modal.html'">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -265,7 +272,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -362,7 +369,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -410,7 +417,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -456,7 +463,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -504,7 +511,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -547,7 +554,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -591,7 +598,7 @@
                     </div>
                     <div class="col-12 col-md-8">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-custom btn-lg" type="submit" onclick="mostrarAlerta()">
+                        <button class="btn btn-custom btn-lg" type="button" onclick="window.location.href='modal.html'">
                           Comprar
                         </button>
                       </div>
@@ -605,134 +612,117 @@
       </div>
     </section>
     <section id="our-artist" class="bg-principal pt-4 pb-4">
-
-
-      <div class="container text-center text-light ">
-        <h2>Nuestros artistas</h2>
+      <div class="container bg-h3-gradient-call-action p-2 mb-5 d-flex">
+        <h2 class="fw-bold fs-2 text-pokeNfts-green">Nuestros artistas</h2>
       </div>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-block w-100">
 
-      <div
-        class="container d-flex flex-column align-items-center mt-5  gap-3 p-3 our-artist-cards flex-md-row text-light card justify-content-center align-items-center">
+              <div
+                class="container d-flex flex-column align-items-center mt-5  gap-3 p-3 our-artist-cards flex-md-row text-light card justify-content-center align-items-center">
+
+                <img src="imgs/perfiles/profile-1.png" alt="artista Lia Takahashi" class="img-fluid artist-img order-2">
+
+                <div class="order-1 order-md-2 d-md-none">
+                  <h3 class="card-title text-pokeNfts-color fs-2 fw-medium">Lia Takahashi</h3>
+                </div>
+
+                <div class="order-1 order-md-2 d-none d-md-flex flex-column">
+                  <div class="container">
+                    <h3 class="card-title text-pokeNfts-color fw-medium">Lia Takahashi</h3>
+                  </div>
+                  <p class="card-body text-pokeNfts-color fs-6">Para mí, reinterpretar Pokémon es explorar sus esencias
+                    y darles vida
+                    en un nuevo
+                    contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan
+                    viva
+                    como el Pokémon en sí</p>
+
+                </div>
+
+                <div class="container order-3 d-md-none">
+                  <p class="card-body text-pokeNfts-color fs-6">Para mí, reinterpretar Pokémon es explorar sus esencias
+                    y darles vida
+                    en un nuevo
+                    contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan
+                    viva
+                    como el Pokémon en sí</p>
+                </div>
+              </div>
 
 
-        <img src="imgs/perfiles/profile-1.png" alt="artista numero 1" class="img-fluid artist-img order-2">
-
-        <div class="order-1 order-md-2 d-md-none">
-          <h3 class="card-title text-pokeNfts-color">Lia Takahashi</h3>
-          <span class="card-text text-pokeNfts-color">Diseñadora Digital</span>
-        </div>
-
-        <div class="order-1 order-md-2 d-none d-md-flex flex-column">
-          <div class="container">
-            <h3 class="card-title text-pokeNfts-color">Lia Takahashi</h3>
-          </div>
-          <p class="card-body text-pokeNfts-color">Para mí, reinterpretar Pokémon es explorar sus esencias y darles vida
-            en un nuevo
-            contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan viva
-            como el Pokémon en sí</p>
-
-        </div>
 
 
-
-
-        <div class="container order-3 d-md-none">
-          <p class="card-body text-pokeNfts-color">Para mí, reinterpretar Pokémon es explorar sus esencias y darles vida
-            en un nuevo
-            contexto. Cada diseño lleva una parte de mi imaginación y nostalgia, buscando que cada pieza sea tan viva
-            como el Pokémon en sí</p>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="Faq" class="bg-pokeNfts-green pt-5 pb-5 d-flex flex-column ">
-      <h2 class="text-pokeNfts-color container">Preguntas Frecuentes</h2>
-      <div class="accordion container" id="faqAccordion">
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header" id="heading1">
-            <button class="accordion-button text-black" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-              ¿Qué es PokéNFTs?
-            </button>
-          </h3>
-          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1">
-            <div class="accordion-body">
-              PokéNFTs es una comunidad de artistas y fanáticos de Pokémon que crea ilustraciones exclusivas en formato
-              NFT, fusionando arte digital con la nostalgia por Pokémon.
             </div>
           </div>
-        </div>
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header text-black" id="heading2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-              ¿Cómo puedo comprar un NFT en PokéNFTs?
-            </button>
-          </h3>
-          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2">
-            <div class="accordion-body">
-              Puedes adquirir NFTs a través de nuestra tienda en línea. Cada ilustración es única y de edición limitada,
-              así que asegúrate de comprar antes de que se agoten.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header text-pokeNfts-color" id="heading4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-              ¿Cómo puedo estar al tanto de los próximos lanzamientos de NFT?
-            </button>
-          </h3>
-          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4">
-            <div class="accordion-body">
-              Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir noticias sobre
-              lanzamientos, eventos y colaboraciones especiales.
-            </div>
-          </div>
-        </div>
+          <div class="carousel-item">
+            <div class="d-block w-100">
+
+              <div
+                class="container d-flex flex-column align-items-center mt-5  gap-3 p-3 our-artist-cards flex-md-row text-light card justify-content-center align-items-center">
+
+                <img src="imgs/perfiles/profile-2.png" alt="artista Kai Nakamura" class="img-fluid artist-img order-2">
+
+                <div class="order-1 order-md-2 d-md-none">
+                  <h3 class="card-title text-pokeNfts-color fs-2 fw-medium">Kai Nakamura</h3>
+                </div>
+
+                <div class="order-1 order-md-2 d-none d-md-flex flex-column">
+                  <div class="container">
+                    <h3 class="card-title text-pokeNfts-color fw-medium">Kai Nakamura</h3>
+                  </div>
+                  <p class="card-body text-pokeNfts-color fs-6">Mi proceso comienza con mucha investigación sobre cada
+                    Pokémon, su tipo, y su personalidad. Luego, dejo que mi estilo fluya, buscando darle un toque
+                    moderno pero respetuoso al diseño original.</p>
+
+                </div>
+
+                <div class="container order-3 d-md-none">
+                  <p class="card-body text-pokeNfts-color fs-6">Mi proceso comienza con mucha investigación sobre cada
+                    Pokémon, su tipo, y su personalidad. Luego, dejo que mi estilo fluya, buscando darle un toque
+                    moderno pero respetuoso al diseño original.</p>
+                </div>
+              </div>
 
 
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header text-pokeNfts-color" id="heading5">
-            <button class="accordion-button collapsed text-pokeNfts-color" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-              ¿Puedo vender mis NFTs de PokéNFTs?
-            </button>
-          </h3>
-          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5">
-            <div class="accordion-body">
-              Sí, puedes revender tus NFTs en mercados compatibles con blockchain, permitiéndote obtener beneficios de
-              tu colección.
+
+
             </div>
           </div>
-        </div>
+          <div class="carousel-item">
+            <div class="d-block w-100">
 
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header text-pokeNfts-color" id="heading6">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-              ¿Cómo se garantiza la autenticidad de cada NFT?
-            </button>
-          </h3>
-          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6">
-            <div class="accordion-body">
-              Cada NFT es autenticado y registrado en la blockchain, lo que asegura su exclusividad y procedencia.
-            </div>
-          </div>
-        </div>
+              <div
+                class="container d-flex flex-column align-items-center mt-5  gap-3 p-3 our-artist-cards flex-md-row text-light card justify-content-center align-items-center">
 
-        <div class="accordion-item text-pokeNfts-color">
-          <h3 class="accordion-header text-pokeNfts-color" id="heading7">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-              ¿Qué medios de pago aceptan en la tienda?
-            </button>
-          </h3>
-          <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7">
-            <div class="accordion-body">
-              Aceptamos varios métodos de pago, incluyendo criptomonedas y tarjetas de crédito, para facilitar tu
-              compra.
+                <img src="imgs/perfiles/profile-4.png" alt="artista Hiroshi Sato" class="img-fluid artist-img order-2">
+
+                <div class="order-1 order-md-2 d-md-none">
+                  <h3 class="card-title text-pokeNfts-color fs-2 fw-medium">Hiroshi Sato</h3>
+                </div>
+
+                <div class="order-1 order-md-2 d-none d-md-flex flex-column">
+                  <div class="container">
+                    <h3 class="card-title text-pokeNfts-color fw-medium">Hiroshi Sato</h3>
+                  </div>
+                  <p class="card-body text-pokeNfts-color fs-6">Cada Pokémon tiene una historia propia, y mi objetivo es
+                    hacer que esa historia brille en cada NFT. Busco reflejar sus características únicas y crear piezas
+                    que sean un deleite visual para los fans</p>
+
+                </div>
+
+                <div class="container order-3 d-md-none">
+                  <p class="card-body text-pokeNfts-color fs-6">Cada Pokémon tiene una historia propia, y mi objetivo es
+                    hacer que esa historia brille en cada NFT. Busco reflejar sus características únicas y crear piezas
+                    que sean un deleite visual para los fans</p>
+                </div>
+              </div>
+
+
+
+
             </div>
           </div>
         </div>
@@ -743,11 +733,11 @@
       <form class="container my-5 p-4 bg-call-to-action rounded position-relative">
         <div class="row">
           <div class="col-12 col-lg-6">
-            <h2 class="mb-4 text-black">¿Quieres ser uno de nuestros artistas?</h2>
-            <p class="text-black">Ingresa tus datos y te enviaremos un mail para informarte cómo puedes hacerlo</p>
+            <h2 class="mb-4 text-black fw-bold fs-2 text-pokeNfts-green">¿Quieres ser uno de nuestros artistas?</h2>
+            <p class="text-black fs-5">Ingresa tus datos y te enviaremos un mail para informarte cómo puedes hacerlo</p>
             <img class="img-fluid mb-3" src="imgs/icons/pikachu-computadora.png" alt="pikachu con una computadora">
           </div>
-          
+
           <div class="col-12 col-lg-6">
             <div class="row">
               <div class="col-12 col-md-6 col-xl-4 mb-3">
@@ -776,7 +766,8 @@
               </div>
               <div class="col-12 mb-3">
                 <label for="comment" class="form-label">Comentario</label>
-                <textarea class="form-control" id="comment" rows="4" placeholder="Escribe tu comentario" required></textarea>
+                <textarea class="form-control" id="comment" rows="4" placeholder="Escribe tu comentario"
+                  required></textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn btn-custom w-100">Enviar</button>
@@ -786,9 +777,105 @@
         </div>
       </form>
     </section>
-    
-    
-    
+
+    <section id="Faq" class="bg-pokeNfts-green pt-5 pb-5 d-flex flex-column ">
+      <div class="container bg-h3-gradient-call-action p-2 mb-5 d-flex">
+        <h2 class="text-pokeNfts-color fw-bold fs-2 text-pokeNfts-green container">Preguntas Frecuentes</h2>
+      </div>
+      <div class="accordion container" id="faqAccordion">
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header" id="heading1">
+            <button class="accordion-button text-pokeNfts-color fw-medium" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              ¿Qué es PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1">
+            <div class="accordion-body">
+              PokéNFTs es una comunidad de artistas y fanáticos de Pokémon que crea ilustraciones exclusivas en formato
+              NFT, fusionando arte digital con la nostalgia por Pokémon.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header text-black" id="heading2">
+            <button class="accordion-button collapsed text-pokeNfts-color fw-medium" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              ¿Cómo puedo comprar un NFT en PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2">
+            <div class="accordion-body">
+              Puedes adquirir NFTs a través de nuestra tienda en línea. Cada ilustración es única y de edición limitada,
+              así que asegúrate de comprar antes de que se agoten.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header text-pokeNfts-color" id="heading4">
+            <button class="accordion-button collapsed text-pokeNfts-color fw-medium" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              ¿Cómo puedo estar al tanto de los próximos lanzamientos de NFT?
+            </button>
+          </h3>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4">
+            <div class="accordion-body">
+              Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir noticias sobre
+              lanzamientos, eventos y colaboraciones especiales.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header text-pokeNfts-color" id="heading5">
+            <button class="accordion-button collapsed text-pokeNfts-color fw-medium " type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              ¿Puedo vender mis NFTs de PokéNFTs?
+            </button>
+          </h3>
+          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5">
+            <div class="accordion-body">
+              Sí, puedes revender tus NFTs en mercados compatibles con blockchain, permitiéndote obtener beneficios de
+              tu colección.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header text-pokeNfts-color" id="heading6">
+            <button class="accordion-button collapsed text-pokeNfts-color fw-medium" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              ¿Cómo se garantiza la autenticidad de cada NFT?
+            </button>
+          </h3>
+          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6">
+            <div class="accordion-body">
+              Cada NFT es autenticado y registrado en la blockchain, lo que asegura su exclusividad y procedencia.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item text-pokeNfts-color">
+          <h3 class="accordion-header text-pokeNfts-color" id="heading7">
+            <button class="accordion-button collapsed text-pokeNfts-color fw-medium" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+              ¿Qué medios de pago aceptan en la tienda?
+            </button>
+          </h3>
+          <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7">
+            <div class="accordion-body">
+              Aceptamos varios métodos de pago, incluyendo criptomonedas y tarjetas de crédito, para facilitar tu
+              compra.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
   </main>
   <footer class="bg-dark">
     <div

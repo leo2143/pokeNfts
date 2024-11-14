@@ -2,15 +2,13 @@
 
     --font-color-pokeNfts: rgb(51 43 43);
     --principal-color: #70b494;
+    --principal-color-50: #90e3bc;
     --call-to-action: #FFE8D1;
     --call-to-action-light: #ffe8d1b4;
-
     --call-to-action-hover: #d9cdc0;
     --call-to-action-parcial: #ffe8d130;
     --bs-accordion-btn-bg: unset;
     --bs-accordion-bg: unset;
-    /* --call-to-action-25-percent:#ffe8d181 !important; */
-
 
 }
 
@@ -66,6 +64,9 @@ a:hover {
 .bg-principal {
     background-color: var(--principal-color);
 }
+.bg-principal-50 {
+    background-color: var(--principal-color-50);
+}
 
 .text-pokeNfts-color {
     color: var(--font-color-pokeNfts);
@@ -98,10 +99,6 @@ a:hover {
 
 .fs-h1 {
     font-size: 4rem;
-}
-
-.bg-pokeNfts-green-50 {
-    background-color: var(--s);
 }
 
 
@@ -153,6 +150,12 @@ footer p {
     background: linear-gradient(146deg, rgba(112 180 148) 50%, rgba(255, 255, 255, 1) 50%);
 }
 
+.bg-h3-gradient-call-action {
+    background: rgb(255, 4, 0);
+    background: linear-gradient(146deg, rgb(255 232 209) 84%, rgba(112, 180, 148, 0) 50%);
+
+}
+
 .about-us {
     background: linear-gradient(180deg, #70B494 0%, #FEFFFF 100%);
 }
@@ -182,7 +185,7 @@ footer p {
 
 .card {
     background-color: var(--call-to-action-parcial);
-    border: 1px solid var(--call-to-action);
+    border: 1px solid var(--call-to-action);    
 }
 
 .accordion-button {
@@ -202,7 +205,8 @@ footer p {
 .accordion-button:focus {
     box-shadow: none;
 }
-.accordion-body{
+
+.accordion-body {
     background-color: var(--call-to-action-light);
     box-shadow: black;
 }
@@ -210,23 +214,55 @@ footer p {
 .text-primary {
     color: var(--call-to-action);
 }
+
 .btn-custom {
     background-color: var(--call-to-action);
-    border-color: var(--call-to-action-parcial);
-    color: var(--font-color-pokeNfts); 
+    border: 1px solid #d7c2ad;
+    color: var(--font-color-pokeNfts);
     font-weight: 500;
-  }
-  
-  .btn-custom:hover {
-    background-color: var(--call-to-action-hover); 
-  }
-  .form-background{
+    transition: 0.3s all;
+}
+
+.btn-custom:hover {
+    background-color: var(--call-to-action-hover);
+    border: 1px solid var(--call-to-action-hover);
+
+}
+
+.form-background {
     width: 20%;
-    background-image: url(../imgs/icons/pikachu-computadora.png
-    );
+    background-image: url(../imgs/icons/pikachu-computadora.png);
     background-repeat: no-repeat;
-    background-size:contain;
-  }
+    background-size: contain;
+}
+
+.nav-link {
+
+    transition: 0.3s all
+}
+
+.nav-link:hover {
+    color: var(--call-to-action);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 13px;
+    height: 13px;
+    border-radius: 147px;
+    border-top: 0;
+    border-bottom: 0;
+}
+.back-our-artist ::after{
+content: '';
+width: 100%;
+height: auto;
+position: absolute;
+z-index: -1;
+top: 10px;
+bottom: 10px;
+background: rgba(255, 232, 209, 0.394);
+filter: blur(45px);
+}
 
 @media (min-width: 400px) {
     .mb-cards {
@@ -242,6 +278,12 @@ footer p {
 
     }
 
+    .bg-h3-gradient-call-action {
+
+        background: linear-gradient(146deg, rgb(255 232 209) 70%, rgba(112, 180, 148, 0) 50%);
+
+    }
+
     .custom-container {
         width: 50% !important;
     }
@@ -249,6 +291,7 @@ footer p {
     .our-artist-cards {
         max-width: 900px;
     }
+
 
 }
 
