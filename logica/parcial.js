@@ -49,7 +49,8 @@ productos.forEach(pro => {
     
     const col = document.createElement("li");
     col.className = "col-12 col-md-6 col-lg-4 mb-cards";
-    
+    col.setAttribute("id", pro.PokemonModel.id)
+
   
 
     const position = document.createElement("div");
@@ -146,8 +147,10 @@ productos.forEach(pro => {
     buyButton.textContent = "Comprar";
     buyButton.onclick = function () {
         // Acción al hacer clic en "Comprar"
-        window.location.href = 'modal.html'; // Puedes personalizar esta URL
-    };
+        let pokemonId = this.closest("li").getAttribute("id");
+        mostrarModal(productos.find(pro => pro.PokemonModel.id === pokemonId));
+
+    }
 
     // Añadir el botón al contenedor
     buttonContainer.appendChild(buyButton);
@@ -172,7 +175,7 @@ const carrito = {
     calcularTotal() {
         let totalPrice = 0;
         this.items.forEach(item => {
-            totalPrice += item.PokemonModel.price;
+            totalPrice = item.PokemonModel.price + totalPrice;
 
         });
         return totalPrice;
@@ -192,12 +195,290 @@ function actualizarMiniCarrito() {
 }
 
 function addToCarrito(pokemonId) {
-    //en base al nombre del pokemon buscar el objeto y añadir a la liste de item
     carrito.items.push(productos.find(pro => pro.PokemonModel.id === pokemonId))
     console.log(carrito.items)
     actualizarMiniCarrito()
-
+    console.log(carrito)
 }
+function mostrarModal(pokemonModel) {
+    // Crear el overlay de fondo
+    const overlay = document.createElement("div");
+    overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0 ";
+
+
+    // Crear el contenedor principal del modal
+    const modal = document.createElement("div");
+    modal.className = "container modals bg-white position-relative container d-flex position-relative gap-5";
+
+
+    // Imagen del producto
+    const imageContainer = document.createElement("div");
+    const img = document.createElement("img");
+    img.setAttribute("src", pokemonModel.PokemonModel.image)
+    img.setAttribute("alt", "nft artistico del pokemon " + pokemonModel.PokemonModel.name)
+    img.className = "img-fluid";
+    imageContainer.appendChild(img);
+
+    // Contenedor de información
+    const infoContainer = document.createElement("div");
+    infoContainer.className = "d-flex flex-column gap-3 mt-5";
+    infoContainer.style = "min-width:300px"
+
+    // Título
+    const title = document.createElement("h2");
+    title.textContent = pokemonModel.PokemonModel.name;
+    // Precio
+    const price = document.createElement("p");
+    price.textContent = `$${pokemonModel.PokemonModel.price}`;
+
+    // Contenedor de cantidad
+    const cantidadContainer = document.createElement("div");
+    cantidadContainer.className = "cantidad d-flex gap-2   text-center";
+    const minusButton = document.createElement("button");
+    minusButton.textContent = "-";
+    minusButton.className = "btn btn-custom";
+    const quantity = document.createElement("p");
+    quantity.textContent = "1";
+    const plusButton = document.createElement("button");
+    plusButton.textContent = "+";
+    plusButton.className = "btn btn-custom";
+    cantidadContainer.appendChild(minusButton);
+    cantidadContainer.appendChild(quantity);
+    cantidadContainer.appendChild(plusButton);
+
+    // Botón "Agregar al carrito"
+    const addToCartButton = document.createElement("button");
+    addToCartButton.textContent = "Agregar al carrito";
+    addToCartButton.className = "btn btn-custom btn-lg";
+    addToCartButton.onclick = function () {
+        addToCarrito(pokemonModel.PokemonModel.id)
+        document.body.removeChild(overlay);
+
+    }
+
+    // Link de detalle
+    const detailLink = document.createElement("a");
+    detailLink.href = "#";
+    detailLink.className = "text-center";
+
+    detailLink.textContent = "Ver detalle del producto";
+
+    // Botón de cierre
+    const closeButton = document.createElement("button");
+    closeButton.className = "btn-close position-absolute fs-4 text-white";
+    closeButton.style.position = "absolute";
+
+    closeButton.onclick = function () {
+        document.body.removeChild(overlay);
+    };
+
+    // Agregar los elementos al modal
+    infoContainer.appendChild(title);
+    infoContainer.appendChild(price);
+    infoContainer.appendChild(cantidadContainer);
+    infoContainer.appendChild(addToCartButton);
+    infoContainer.appendChild(detailLink);
+    modal.appendChild(imageContainer);
+    modal.appendChild(infoContainer);
+    modal.appendChild(closeButton);
+
+    // Agregar el modal al overlay
+    overlay.appendChild(modal);
+
+    // Agregar el overlay al body
+    document.body.appendChild(overlay);
+}
+
+
+
+
+// Función para crear y mostrar el carrito desplegable
+function mostrarCarrito() {
+    // Comprobar si el carrito ya existe
+    const carritoExistente = document.getElementById("carrito-lateral");
+    console.log("---------->")
+    if (carritoExistente) {
+        carritoExistente.classList.toggle("open");
+        return;
+    }
+
+    // Crear contenedor del carrito
+    const carritoLateral = document.createElement("div");
+    carritoLateral.id = "carrito-lateral";
+    carritoLateral.className = "carrito-lateral";
+
+    // Título
+    const titulo = document.createElement("h2");
+    titulo.textContent = "Mi carrito";
+    carritoLateral.appendChild(titulo);
+
+    // Contenedor de items
+    const itemsContainer = document.createElement("div");
+    itemsContainer.id = "items";
+
+    carrito.items.forEach((producto) => {
+        // Contenedor del producto
+        const itemContainer = document.createElement("div");
+        itemContainer.id = "item-container";
+
+        // Título y cantidad
+        const titleContainer = document.createElement("div");
+        titleContainer.id = "title";
+
+        const img = document.createElement("img");
+        img.src = producto.PokemonModel.image;
+        img.alt = `Imagen de ${producto.PokemonModel.name}`;
+        titleContainer.appendChild(img);
+
+        const detailsContainer = document.createElement("div");
+        const tituloProducto = document.createElement("h4");
+        tituloProducto.textContent = producto.PokemonModel.name;
+
+        const cantidadContainer = document.createElement("div");
+        cantidadContainer.className = "cantidad d-flex gap-2";
+        const disminuirBtn = document.createElement("button");
+        disminuirBtn.className = "btn btn-custom";
+        disminuirBtn.textContent = "-";
+        disminuirBtn.onclick = () => actualizarCantidad(producto.PokemonModel.id, -1);
+
+        const cantidadText = document.createElement("p");
+        cantidadText.textContent = producto.cantidad;
+
+        const aumentarBtn = document.createElement("button");
+        aumentarBtn.className = "btn btn-custom";
+        aumentarBtn.textContent = "+";
+        aumentarBtn.onclick = () => actualizarCantidad(producto.id, 1);
+
+        cantidadContainer.appendChild(disminuirBtn);
+        cantidadContainer.appendChild(cantidadText);
+        cantidadContainer.appendChild(aumentarBtn);
+
+        detailsContainer.appendChild(tituloProducto);
+        detailsContainer.appendChild(cantidadContainer);
+        titleContainer.appendChild(detailsContainer);
+        itemContainer.appendChild(titleContainer);
+
+        // Precio
+        const priceContainer = document.createElement("div");
+        priceContainer.id = "price";
+
+        const priceDetails = document.createElement("div");
+        const priceText = document.createElement("span");
+        priceText.textContent = `$${producto.precio * producto.cantidad}`;
+        const eliminarIcon = document.createElement("img");
+        eliminarIcon.src = "../imgs/icons/delete-icon.png"; // Reemplaza con tu icono
+        eliminarIcon.alt = "Eliminar producto";
+        eliminarIcon.style.cursor = "pointer";
+        eliminarIcon.onclick = () => eliminarProducto(producto.id);
+
+        priceDetails.appendChild(priceText);
+        priceDetails.appendChild(eliminarIcon);
+        priceContainer.appendChild(priceDetails);
+        itemContainer.appendChild(priceContainer);
+
+        itemsContainer.appendChild(itemContainer);
+    });
+
+    carritoLateral.appendChild(itemsContainer);
+
+    // Subtotal
+    const subtotalContainer = document.createElement("div");
+    subtotalContainer.id = "Subtotal";
+    const subtotalTitle = document.createElement("h3");
+    subtotalTitle.textContent = "Subtotal";
+    const subtotalAmount = document.createElement("span");
+    subtotalAmount.textContent = `$${calcularTotalCarrito()}`;
+    subtotalContainer.appendChild(subtotalTitle);
+    subtotalContainer.appendChild(subtotalAmount);
+    carritoLateral.appendChild(subtotalContainer);
+
+    // Total
+    const totalContainer = document.createElement("div");
+    totalContainer.id = "Total";
+    const totalTitle = document.createElement("h3");
+    totalTitle.textContent = "Total";
+    const totalAmount = document.createElement("span");
+    totalAmount.textContent = `$${calcularTotalCarrito()}`;
+    totalContainer.appendChild(totalTitle);
+    totalContainer.appendChild(totalAmount);
+    carritoLateral.appendChild(totalContainer);
+
+    // Botones
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.id = "buttons";
+
+    const comprarButton = document.createElement("button");
+    comprarButton.textContent = "Iniciar compra";
+    comprarButton.onclick = () => alert("Iniciando compra...");
+    const seguirComprandoLink = document.createElement("a");
+    seguirComprandoLink.textContent = "Seguir comprando";
+    seguirComprandoLink.href = "#";
+
+    buttonsContainer.appendChild(comprarButton);
+    buttonsContainer.appendChild(seguirComprandoLink);
+    carritoLateral.appendChild(buttonsContainer);
+
+    // Botón para cerrar el carrito
+    const closeButton = document.createElement("button");
+    closeButton.className = "close-btn";
+    closeButton.textContent = "×";
+    closeButton.onclick = () => carritoLateral.classList.remove("open");
+    carritoLateral.appendChild(closeButton);
+
+    // Agregar carrito al body
+    document.body.appendChild(carritoLateral);
+    carritoLateral.classList.add("open");
+}
+document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
+
+
+// Función para calcular el total del carrito
+function calcularTotalCarrito() {
+    // return carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
+}
+
+// Función para actualizar la cantidad de un producto
+function actualizarCantidad(id, cambio) {
+    const producto = carrito.find((item) => item.id === id);
+    if (producto) {
+        producto.cantidad += cambio;
+        if (producto.cantidad <= 0) {
+            eliminarProducto(id);
+        } else {
+            mostrarCarrito();
+        }
+    }
+}
+
+// Función para eliminar un producto del carrito
+function eliminarProducto(id) {
+    const index = carrito.findIndex((item) => item.id === id);
+    if (index !== -1) {
+        carrito.splice(index, 1);
+        mostrarCarrito();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function abrirModal() {
     // Mostrar el modal
     document.getElementById('modal-container').classList.remove('hidden');
@@ -215,6 +496,7 @@ function deleteFromCarrito(pokemonId) {
     carrito.items.splice(carrito.items.indexOf(pokemonId), 1)
     actualizarMiniCarrito()
 }
+
 
 
 
@@ -350,14 +632,6 @@ function abrirModalProducto(producto) {
 
     // Mostrar el modal
     modal.classList.add('modal-open');
-}
-
-// Función para cerrar el modal
-function cerrarModal() {
-    const modal = document.getElementById('product-modal');
-    if (modal) {
-        modal.remove();
-    }
 }
 
 

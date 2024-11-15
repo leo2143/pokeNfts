@@ -30,29 +30,42 @@
     </header>
 
     <main>
-      <aside id="mini-carrito">
+      <aside id="mini-carrito" class="d-flex gap-3 justify-content-between">
         <p><span id="total-item">0</span> ítems agregados</p>
         <p>$<span id="total-price">0</span> es el total</p>
-        <button onclick="">Ver carrito</button>
+        <button id="btn-carrito" class="btn btn-primary">Ver Carrito</button>
       </aside>
 
-      <section>
+      <aside class="position-absolute z-999">
 
-        <div>
-          <div class="image-container"><img src="../imgs/pokemons/blastoice.jpg" alt="blastoise"></div>
-          <div>
+
+
+
+      </aside>
+
+      <!-- <div class="modals position-absolute z-1 bg-white start-50">
+        <div class="container d-flex position-relative gap-5">
+          <div class="image-container"><img class="img-fluid" src="../imgs/pokemons/blastoice.jpg" alt="blastoise"></div>
+          <div class="d-flex flex-column gap-3">
+            <div>
             <h2>Blastoise</h2>
             <p>precio</p>
-            <div class="cantidad">
-              <button>-</button>
+            <div class="cantidad d-flex gap-2">
+              <button class="btn btn-custom">-</button>
               <p>1</p>
-              <button>+</button>
+              <button class="btn btn-custom">+</button>
             </div>
-            <a href="">ver detalle del producto</a>
+          </div>
+
+            
+            <div class="d-flex flex-column">
+            <button class="btn btn-custom btn-lg" type="button">agregar al carrito</button>
+            <a href="">Ver detalle del producto</a>
+          </div>
           </div>
         </div>
-
-      </section>
+        <button class="position-absolute fw-bold fs-1 top-0 right-0">x</button>
+      </div> -->
 
 
       <section id="nfts">
@@ -65,8 +78,8 @@
     </main>
 
     <footer class=" bg-pokeNfts-green p-5 text-pokeNfts-color">
-      <ul class="container d-flex align-items-center justify-content-center gap-3 fs-5">
-        <li  >Profesor Corbalan Cristian Ariel</li>
+      <ul class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 fs-5">
+        <li>Profesor Corbalan Cristian Ariel</li>
         <li>
           <a href="mailto:cristian.corbalan@davinci.edu.ar" target="_blank">cristian.corbalan@davinci.edu.ar</a>
         </li>
