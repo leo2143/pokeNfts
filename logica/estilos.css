@@ -168,14 +168,3 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-ul {
-  list-style-type: none;   /* Quita los puntos o numeración */
-  padding: 0;              /* Elimina el padding predeterminado */
-  margin: 0;               /* Elimina el margen predeterminado */
-}
-
-li {
-  list-style-type: none;   /* Asegura que los <li> no tengan estilo de lista */
-  padding: 0;              /* Elimina cualquier padding adicional */
-  margin: 0;               /* Elimina cualquier margen adicional */
-}

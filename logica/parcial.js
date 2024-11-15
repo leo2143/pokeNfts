@@ -6,17 +6,17 @@ import { PokemonTypeModel } from './PokemonTypeModel.js';
  * APELLIDO, NOMBRE | APELLIDO, NOMBRE
  */
 
-const rayo = new PokemonTypeModel('1', 'rayo', 'yellow');
-const agua = new PokemonTypeModel('2', 'agua', 'blue');
-const normal = new PokemonTypeModel('3', 'Normal', 'blue');
-const planta = new PokemonTypeModel('4', 'Planta', 'blue');
-const veneno = new PokemonTypeModel('5', 'Veneno', 'blue');
-const fuego = new PokemonTypeModel('6', 'Fuego', 'blue');
-const volador = new PokemonTypeModel('7', 'Volador', 'blue');
-const fantasma = new PokemonTypeModel('8', 'Fantasma', 'blue');
-const hielo = new PokemonTypeModel('9', 'Hielo', 'blue');
-const acero = new PokemonTypeModel('10', 'Acero', 'blue');
-const lucha = new PokemonTypeModel('11', 'Lucha', 'blue');
+const rayo = new PokemonTypeModel('1', 'Rayo', 'bg-warning text-dark');
+const agua = new PokemonTypeModel('2', 'Agua', 'bg-water text-light');
+const normal = new PokemonTypeModel('3', 'Normal', 'bg-secondary text-light');
+const planta = new PokemonTypeModel('4', 'Planta', 'bg-grass');
+const veneno = new PokemonTypeModel('5', 'Veneno', 'bg-poison');
+const fuego = new PokemonTypeModel('6', 'Fuego', 'bg-fire');
+const volador = new PokemonTypeModel('7', 'Volador', 'bg-fly');
+const fantasma = new PokemonTypeModel('8', 'Fantasma', 'bg-ghost');
+const hielo = new PokemonTypeModel('9', 'Hielo', 'bg-ice');
+const acero = new PokemonTypeModel('10', 'Acero', 'bg-steel');
+const lucha = new PokemonTypeModel('11', 'Lucha', 'bg-figther');
 
 
 const pikachu = new PokemonModel('1', 'pikachu', 'Este Pikachu es curioso y lleno de energía, Le encanta correr y jugar, pero ten cuidado con sus descargas eléctricas cuando se emociona demasiado. Con el compañero adecuado, ¡será el aliado perfecto para cualquier viaje!', '../../imgs/pokemons/pikachu.jpg', [rayo], 500);
@@ -47,7 +47,7 @@ const listaProductos = document.getElementById("productos");
 
 productos.forEach(pro => {
     
-    const col = document.createElement("div");
+    const col = document.createElement("li");
     col.className = "col-12 col-md-6 col-lg-4 mb-cards";
     
   
@@ -127,7 +127,7 @@ productos.forEach(pro => {
 
     const priceValue = document.createElement("span");
     priceValue.className = "fw-medium fs-3";
-    priceValue.textContent = `${pro.price}`; // Precio dinámico
+    priceValue.textContent = `$${pro.PokemonModel.price}`;
 
     // Añadir elementos de precio
     priceContainer.appendChild(priceLabel);
