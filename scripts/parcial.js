@@ -19,7 +19,7 @@ const acero = new PokemonTypeModel('10', 'Acero', 'bg-steel');
 const lucha = new PokemonTypeModel('11', 'Lucha', 'bg-figther');
 
 
-const pikachu = new PokemonModel('1', 'pikachu', 'Este Pikachu es curioso y lleno de energía, Le encanta correr y jugar, pero ten cuidado con sus descargas eléctricas cuando se emociona demasiado. Con el compañero adecuado, ¡será el aliado perfecto para cualquier viaje!', '../../imgs/pokemons/pikachu.jpg', [rayo], 500, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
+const pikachu = new PokemonModel('1', 'Pikachu', 'Este Pikachu es curioso y lleno de energía, Le encanta correr y jugar, pero ten cuidado con sus descargas eléctricas cuando se emociona demasiado. Con el compañero adecuado, ¡será el aliado perfecto para cualquier viaje!', '../../imgs/pokemons/pikachu.jpg', [rayo], 500, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
 const blastoise = new PokemonModel('2', 'Blastoise', 'Este Blastoise está listo para defender a su entrenador con sus potentes cañones de agua. Aunque parece serio, le encanta jugar en el agua y hacer pequeños remolinos. Si eres su compañero, prepárate para muchas aventuras acuáticas.', '../imgs/pokemons/blastoice.jpg', [agua], 600, 'Lia Takahashi', 'Muy raro', 'Takahashi', 'No');
 const bulbasur = new PokemonModel('3', 'Bulbasur', 'Este Bulbasaur está lleno de energía y siempre listo para ayudar a su entrenador a crecer. Adora tomar el sol y fortalecer su liana, aunque también disfruta de un buen descanso bajo las hojas. Con paciencia y cuidado, verás cómo florece junto a ti.', '../imgs/pokemons/bulbasur.jpg', [planta, veneno], 321, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
 const charizard = new PokemonModel('4', 'Charizard', 'Este Charizard de espíritu indomable busca un entrenador que pueda igualar su valentía. Su llama arde intensamente, y aunque parece rudo, tiene un lado protector. ¡Solo cuidado con esas alas! A veces le gusta alzar el vuelo sin avisar.', '../imgs/pokemons/charizard.jpg', [fuego, volador], 241, 'Lia Takahashi', 'Epico', 'Takahashi', 'Si');
@@ -29,7 +29,6 @@ const eevee = new PokemonModel('7', 'Eevee', 'Este Eevee es curioso y lleno de e
 const lapras = new PokemonModel('8', 'Lapras', 'Lapras es sereno y le encanta navegar tranquilamente sobre el agua. Es muy protector con aquellos que ama y busca un entrenador que valore la paz y la conexión con la naturaleza. Prepárate para un viaje tranquilo y lleno de armonía a su lado.', '../imgs/pokemons/lapras.jpg', [hielo, agua], 134, 'Kai Nakamura', 'Raro', 'Nakamura', 'Si');
 const garados = new PokemonModel('9', 'Garados', 'Este es un Gyarados feroz y majestuoso, siempre en busca de un entrenador que pueda canalizar su energía desbordante. Le encanta nadar a gran velocidad y causar oleadas en su paso, así que prepárate para tener aventuras emocionantes con él', '../imgs/pokemons/garados.jpg', [agua], 244, 'Kai Nakamura', 'Epico', 'Nakamura', 'No');
 
-// Array de productos con instancias de PokemonModel
 const productos = [
     { PokemonModel: pikachu },
     { PokemonModel: blastoise },
@@ -77,7 +76,7 @@ productos.forEach(pro => {
 
     const titleContainer = document.createElement("div")
     const titulo = document.createElement("h3");
-    titulo.textContent = pro.PokemonModel.name;  // Accede directamente a pro.PokemonModel.name
+    titulo.textContent = pro.PokemonModel.name;
     textContainer.append(titleContainer)
     titleContainer.append(titulo)
 
@@ -88,9 +87,7 @@ productos.forEach(pro => {
     typesContainer.className = "d-flex flex-wrap gap-2"
     titleContainer.append(typesContainer)
 
-    //podria tener un div
 
-    // Crear y agregar la categoría
     pro.PokemonModel.pokemonTypes.forEach(type => {
         const categoria = document.createElement("p");
         categoria.className = `border ps-3 pe-3 rounded-3 fw-medium ${type.styleClassName}`;
@@ -100,10 +97,9 @@ productos.forEach(pro => {
 
 
 
-    // Crear y agregar la descripción
     const descripcionContainer = document.createElement("div");
     const descripcion = document.createElement("p");
-    descripcion.textContent = pro.PokemonModel.description;  // Accede directamente a pro.PokemonModel.description
+    descripcion.textContent = pro.PokemonModel.description;
     textContainer.append(descripcionContainer)
     descripcionContainer.append(descripcion)
 
@@ -111,11 +107,9 @@ productos.forEach(pro => {
     const container = document.createElement("div");
     container.className = "container mt-4";
 
-    // Fila con precio y botón
     const priveRow = document.createElement("div");
     priveRow.className = "row align-items-center gap-2 gap-md-0";
 
-    // Columna para el precio
     const priceCol = document.createElement("div");
     priceCol.className = "col-4";
 
@@ -130,12 +124,10 @@ productos.forEach(pro => {
     priceValue.className = "fw-medium fs-3";
     priceValue.textContent = `$${pro.PokemonModel.price}`;
 
-    // Añadir elementos de precio
     priceContainer.appendChild(priceLabel);
     priceContainer.appendChild(priceValue);
     priceCol.appendChild(priceContainer);
 
-    // Columna para el botón de compra
     const buttonCol = document.createElement("div");
     buttonCol.className = "col-12 col-md-8";
 
@@ -146,21 +138,17 @@ productos.forEach(pro => {
     buyButton.className = "btn btn-custom btn-lg";
     buyButton.textContent = "Comprar";
     buyButton.onclick = function () {
-        // Acción al hacer clic en "Comprar"
         let pokemonId = this.closest("li").getAttribute("id");
         mostrarModal(productos.find(pro => pro.PokemonModel.id === pokemonId));
 
     }
 
-    // Añadir el botón al contenedor
     buttonContainer.appendChild(buyButton);
     buttonCol.appendChild(buttonContainer);
 
-    // Agregar columnas a la fila
     priveRow.appendChild(priceCol);
     priveRow.appendChild(buttonCol);
 
-    // Agregar fila al contenedor principal
     container.appendChild(priveRow);
 
     textContainer.append(container)
@@ -169,7 +157,6 @@ productos.forEach(pro => {
 
 });
 
-// Objeto que administra el carrito
 const carrito = {
     items: [],
     calcularTotal() {
@@ -185,18 +172,10 @@ const carrito = {
     },
 }
 
-function actualizarMiniCarrito() {
-    const totalItemsSpan = document.querySelector("#mini-carrito #total-item");
-    const totalPriceSpan = document.querySelector("#mini-carrito #total-price");
 
-    // Actualiza el contenido de los elementos `<span>` en el HTML
-    totalItemsSpan.textContent = carrito.calcularCantidad();
-    totalPriceSpan.textContent = carrito.calcularTotal();
-}
 
 function addToCarrito(pokemonId) {
     carrito.items.push(productos.find(pro => pro.PokemonModel.id === pokemonId))
-    actualizarMiniCarrito()
 }
 function mostrarModal(pokemonModel) {
     // Crear el overlay de fondo
@@ -238,7 +217,7 @@ function mostrarModal(pokemonModel) {
     container.appendChild(crearItem("bg-principal-50", "Rareza", pokemonModel.PokemonModel.rarity));
     container.appendChild(crearItem("bg-pokeNfts-green", "Coleccion", pokemonModel.PokemonModel.collection));
     container.appendChild(crearItem("bg-principal-50", "Edicion Limitada", pokemonModel.PokemonModel.limitEdition));
-    container.appendChild(crearItem("bg-pokeNfts-green", "Typo", pokemonModel.PokemonModel));
+    container.appendChild(crearItem("bg-pokeNfts-green", "Tipo", pokemonModel.PokemonModel));
 
     const textContainer = document.createElement("div");
     textContainer.className = "container";
@@ -278,6 +257,12 @@ function mostrarModal(pokemonModel) {
     addToCartButton.onclick = function () {
         addToCarrito(pokemonModel.PokemonModel.id)
         document.body.removeChild(overlay);
+
+        const carrito = document.querySelector("#carrito-lateral");
+        if (carrito) {
+            console.log("paso")
+            document.body.removeChild(carrito);
+        }
         mostrarCarrito()
 
     }
@@ -317,11 +302,8 @@ function mostrarModal(pokemonModel) {
     document.body.appendChild(overlay);
 }
 
-// Función para crear y mostrar el carrito desplegable
 function mostrarCarrito() {
-    // Comprobar si el carrito ya existe
 
-    // Crear contenedor del carrito
     const carritoLateral = document.createElement("div");
     carritoLateral.id = "carrito-lateral";
     carritoLateral.className = "carrito-lateral container ";
@@ -330,22 +312,18 @@ function mostrarCarrito() {
     const container = document.createElement("div");
     container.className = "d-flex flex-column gap-4"
 
-    // Título
     const titulo = document.createElement("h2");
     titulo.textContent = "Mi carrito";
     titulo.className = "mt-5"
     carritoLateral.appendChild(titulo);
 
-    // Contenedor de items
     const itemsContainer = document.createElement("div");
     itemsContainer.className = "d-flex flex-column gap-3"
     itemsContainer.id = "item";
     carrito.items.forEach((producto) => {
-        // Contenedor del producto
         const itemContainer = document.createElement("div");
         itemContainer.id = "item-container";
         itemContainer.className = "d-flex gap-5"
-        // Título y cantidad
         const titleContainer = document.createElement("div");
         const img = document.createElement("img");
         img.src = producto.PokemonModel.image;
@@ -384,7 +362,6 @@ function mostrarCarrito() {
         titleContainer.appendChild(detailsContainer);
         itemContainer.appendChild(titleContainer);
 
-        // Precio
         const priceContainer = document.createElement("div");
         priceContainer.className = "d-flex align-items-center justify-content-between";
         priceContainer.id = "price";
@@ -426,7 +403,6 @@ function mostrarCarrito() {
     carritoLateral.appendChild(itemsContainer);
     const totalsContainer = document.createElement("div");
 
-    // Subtotal
     const subtotalContainer = document.createElement("div");
     subtotalContainer.id = "Subtotal";
     subtotalContainer.className = "d-flex align-items-center justify-content-between"
@@ -439,7 +415,6 @@ function mostrarCarrito() {
     totalsContainer.appendChild(subtotalContainer)
     carritoLateral.appendChild(totalsContainer);
 
-    // Total
     const totalContainer = document.createElement("div");
     totalContainer.className = "d-flex align-items-center justify-content-between"
     totalContainer.id = "Total";
@@ -448,7 +423,6 @@ function mostrarCarrito() {
     const totalAmount = document.createElement("span");
     totalAmount.textContent = `$${carrito.calcularTotal()}`;
 
-    //total items
     const subtotalItemsContainer = document.createElement("div");
     subtotalItemsContainer.id = "Subtotal";
     subtotalItemsContainer.className = "d-flex align-items-center justify-content-between"
@@ -471,7 +445,6 @@ function mostrarCarrito() {
     totalsContainer.appendChild(totalContainer);
     carritoLateral.appendChild(totalsContainer);
 
-    // Botones
     const buttonsContainer = document.createElement("div");
     buttonsContainer.id = "buttons";
     buttonsContainer.className = "d-flex flex-column align-items-center justify-content-center gap-3"
@@ -486,7 +459,6 @@ function mostrarCarrito() {
     seguirComprandoLink.href = "#";
     seguirComprandoLink.addEventListener("click", (event => {
         carrito.items.length = 0
-        actualizarMiniCarrito()
         document.body.removeChild(carritoLateral);
         mostrarCarrito()
 
@@ -502,7 +474,6 @@ function mostrarCarrito() {
     container.append(buttonsContainer)
     carritoLateral.appendChild(container);
 
-    // Botón para cerrar el carrito
     const closeButton = document.createElement("button");
     closeButton.className = "close-btn fs-1";
     closeButton.textContent = "×";
@@ -510,32 +481,14 @@ function mostrarCarrito() {
     carritoLateral.appendChild(closeButton);
 
 
-    // Agregar carrito al body
     document.body.appendChild(carritoLateral);
     carritoLateral.classList.add("open");
 }
 document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
 
-
-// Función para actualizar la cantidad de un producto
-function actualizarCantidad(id, cambio) {
-    const producto = carrito.find((item) => item.id === id);
-    if (producto) {
-        producto.cantidad += cambio;
-        if (producto.cantidad <= 0) {
-            eliminarProducto(id);
-        } else {
-            mostrarCarrito();
-        }
-    }
-}
-
-// Función para eliminar un producto del carrito
 function eliminarProducto(pokemonName) {
 
     carrito.items = carrito.items.filter(producto => producto.PokemonModel.name !== pokemonName);
-
-    actualizarMiniCarrito()
 }
 
 
