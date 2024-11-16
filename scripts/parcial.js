@@ -189,7 +189,7 @@ function mostrarModal(pokemonModel) {
     modal.style.overflowY = "auto";
     modal.style.maxHeight = "80vh";
     const imagenAndTitles = document.createElement("div");
-    imagenAndTitles.className = "container bg-white container d-flex gap-5"
+    imagenAndTitles.className = "container bg-white container d-flex flex-column flex-lg-row  gap-lg-5"
 
     // Imagen del producto
     const imageContainer = document.createElement("div");
@@ -201,7 +201,7 @@ function mostrarModal(pokemonModel) {
 
     // Contenedor de información
     const infoContainer = document.createElement("div");
-    infoContainer.className = "d-flex flex-column gap-3 mt-5";
+    infoContainer.className = "d-flex flex-column gap-3 mt-2 mt-lg-5";
     infoContainer.style = "min-width:300px"
 
     // Título contenedor
@@ -506,8 +506,7 @@ function crearItem(clase, titulo, descripcion) {
         descripcion.pokemonTypes.forEach(s => {
             const categoria = document.createElement("p");
             divDescripcion.className = "text-center justify-content-center w-50 d-flex gap-2";
-
-            categoria.className = `text-center mt-2 fs-4 border ps-4 pe-4 rounded-3 fw-medium ${s.styleClassName}`;
+            categoria.className = `text-center mt-2 fs-6 mt-2 fs-lg-4 border ps-lg-4 pe-lg-4 rounded-3 fw-medium ${s.styleClassName}`;
             categoria.textContent = s.name;
             divDescripcion.append(categoria)
             item.appendChild(divTitulo);
