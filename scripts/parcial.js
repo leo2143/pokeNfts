@@ -1,6 +1,10 @@
 'use strict';
+import { Procesamiento } from './procesamiento.js';
+
 import { PokemonModel } from './PokemonModel.js';
 import { PokemonTypeModel } from './PokemonTypeModel.js';
+
+
 
 /*
  * ORELLANA, LEONARDO
@@ -43,127 +47,22 @@ const productos = [
 
 const listaProductos = document.getElementById("productos");
 
+createCatalog()
 
-productos.forEach(pro => {
-
-    const col = document.createElement("li");
-    col.className = "col-12 col-md-6 col-lg-4 mb-cards";
-    col.setAttribute("id", pro.PokemonModel.id)
-
-
-
-    const position = document.createElement("div");
-    position.className = "position-relative";
-    col.append(position)
-
-
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "rounded-5 border"
-    position.append(imageContainer)
-
-
-    const img = document.createElement("img");
-    img.setAttribute("src", pro.PokemonModel.image)
-    img.className = "img-fluid rounded-5"
-    img.setAttribute("alt", "nft artistico del pokemon " + pro.PokemonModel.name)
-    imageContainer.append(img)
-
-
-    const textContainer = document.createElement("div");
-    textContainer.className = "bg-light rounded-5 border position-absolute p-4 shadow info-container"
-    position.append(textContainer)
-
-
-    const titleContainer = document.createElement("div")
-    const titulo = document.createElement("h3");
-    titulo.textContent = pro.PokemonModel.name;
-    textContainer.append(titleContainer)
-    titleContainer.append(titulo)
-
-
-
-
-    const typesContainer = document.createElement("div")
-    typesContainer.className = "d-flex flex-wrap gap-2"
-    titleContainer.append(typesContainer)
-
-
-    pro.PokemonModel.pokemonTypes.forEach(type => {
-        const categoria = document.createElement("p");
-        categoria.className = `border ps-3 pe-3 rounded-3 fw-medium ${type.styleClassName}`;
-        categoria.textContent = type.name
-        typesContainer.append(categoria)
-    })
-
-
-
-    const descripcionContainer = document.createElement("div");
-    const descripcion = document.createElement("p");
-    descripcion.textContent = pro.PokemonModel.description;
-    textContainer.append(descripcionContainer)
-    descripcionContainer.append(descripcion)
-
-
-    const container = document.createElement("div");
-    container.className = "container mt-4";
-
-    const priveRow = document.createElement("div");
-    priveRow.className = "row align-items-center gap-2 gap-md-0";
-
-    const priceCol = document.createElement("div");
-    priceCol.className = "col-4";
-
-    const priceContainer = document.createElement("div");
-    priceContainer.className = "d-flex flex-column";
-
-    const priceLabel = document.createElement("span");
-    priceLabel.className = "fw-medium fs-6 m-0 p-0 text-secondary";
-    priceLabel.textContent = "Precio";
-
-    const priceValue = document.createElement("span");
-    priceValue.className = "fw-medium fs-3";
-    priceValue.textContent = `$${pro.PokemonModel.price}`;
-
-    priceContainer.appendChild(priceLabel);
-    priceContainer.appendChild(priceValue);
-    priceCol.appendChild(priceContainer);
-
-    const buttonCol = document.createElement("div");
-    buttonCol.className = "col-12 col-md-8";
-
-    const buttonContainer = document.createElement("div");
-    buttonContainer.className = "d-grid gap-2";
-
-    const buyButton = document.createElement("button");
-    buyButton.className = "btn btn-custom btn-lg";
-    buyButton.textContent = "Comprar";
-    buyButton.onclick = function () {
-        let pokemonId = this.closest("li").getAttribute("id");
-        mostrarModal(productos.find(pro => pro.PokemonModel.id === pokemonId));
-
-    }
-
-    buttonContainer.appendChild(buyButton);
-    buttonCol.appendChild(buttonContainer);
-
-    priveRow.appendChild(priceCol);
-    priveRow.appendChild(buttonCol);
-
-    container.appendChild(priveRow);
-
-    textContainer.append(container)
-
-    listaProductos.appendChild(col);
-
-});
 
 const carrito = {
     items: [],
+    totalPriceItem:[],
+
+    calcularCantidadItem(pokemonId){
+        let item = this.totalPriceItem.find(item => item.id == pokemonId)
+        return  item.price;
+    },
+
     calcularTotal() {
         let totalPrice = 0;
-        this.items.forEach(item => {
-            totalPrice = item.PokemonModel.price + totalPrice;
-
+        this.totalPriceItem.forEach(item => {
+            totalPrice = item.price + totalPrice;
         });
         return totalPrice;
     },
@@ -172,13 +71,67 @@ const carrito = {
     },
 }
 
+function addItem(pokemon){
+    let item = carrito.totalPriceItem.find(item => item.id == pokemon.id)
+    item.price += pokemon.price;
+    item.amount += 1;
+
+    carrito.totalPriceItem = carrito.totalPriceItem.map(existingItem => 
+        existingItem.id === item.id ? item : existingItem
+    );
+    carrito.calcularCantidadItem(pokemon.id)
+    console.log(carrito.totalPriceItem)
+
+}
+function deleteItem(pokemon){
+    let item = carrito.totalPriceItem.find(item => item.id == pokemon.id)
+    item.price -= pokemon.price;
+    item.amount -= 1;
+    carrito.totalPriceItem = carrito.totalPriceItem.map(existingItem => 
+        existingItem.id === item.id ? item : existingItem
+    );
+    if(item.amount <= 0){
+        console.log("aqui")
+        eliminarProducto(pokemon.name)
+    }else{
+        carrito.calcularCantidadItem(pokemon.id)
+
+    }
+
+  
+
+}
 
 
 function addToCarrito(pokemonId) {
-    carrito.items.push(productos.find(pro => pro.PokemonModel.id === pokemonId))
+ 
+    //   1--verificar si esta en el carrito
+    //   2--si esta hacer un update
+    //   3--si no esta hacer el push directamente
+
+    const pokemon = carrito.items.find(pokemon => pokemon.PokemonModel.id ==  pokemonId)
+    console.log(pokemon)
+
+    if(pokemon != null){
+        addItem(pokemon.PokemonModel)
+    }else{
+
+      let pokemon =  productos.find(pro => pro.PokemonModel.id === pokemonId)
+
+      let item = new Procesamiento(pokemon.PokemonModel.id,1,pokemon.PokemonModel.price)
+      
+      carrito.totalPriceItem.push(item)
+      carrito.items.push(pokemon)
+
+
+    }
+
+
 }
 function mostrarModal(pokemonModel) {
     // Crear el overlay de fondo
+    var finalPrice = null;
+    var finalItems =null;
     const overlay = document.createElement("div");
     overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0 ";
 
@@ -240,12 +193,41 @@ function mostrarModal(pokemonModel) {
     cantidadContainer.className = "cantidad d-flex gap-2   text-center";
     const minusButton = document.createElement("button");
     minusButton.textContent = "-";
+    minusButton.addEventListener("click",(event =>{
+
+        let c = parseInt(quantity.textContent, 10);
+        c = c - 1;
+        if(c<=0){
+            return
+        }
+        quantity.textContent = c;
+        finalItems = c ;
+        finalPrice = pokemonModel.PokemonModel.price * c;
+        console.log(c);
+        price.textContent = `$${pokemonModel.PokemonModel.price * c}`
+        console.log(finalPrice, finalItems);
+
+
+
+    }))
+
     minusButton.className = "btn btn-custom";
     const quantity = document.createElement("p");
-    quantity.textContent = "1";
+    quantity.textContent = 1;
     const plusButton = document.createElement("button");
     plusButton.textContent = "+";
     plusButton.className = "btn btn-custom";
+    plusButton.className = "btn btn-custom";
+    plusButton.addEventListener("click",(event =>{
+        let c = parseInt(quantity.textContent, 10);
+        c = c + 1;
+        finalItems = c ; 
+        finalPrice = pokemonModel.PokemonModel.price * c;
+        quantity.textContent = c; 
+        price.textContent = `$${pokemonModel.PokemonModel.price * c}`
+        console.log(finalPrice, finalItems);
+
+     }))
     cantidadContainer.appendChild(minusButton);
     cantidadContainer.appendChild(quantity);
     cantidadContainer.appendChild(plusButton);
@@ -255,13 +237,22 @@ function mostrarModal(pokemonModel) {
     addToCartButton.textContent = "Agregar al carrito";
     addToCartButton.className = "btn btn-custom btn-lg";
     addToCartButton.onclick = function () {
-        addToCarrito(pokemonModel.PokemonModel.id)
-        document.body.removeChild(overlay);
 
-        const carrito = document.querySelector("#carrito-lateral");
-        if (carrito) {
+        let pokemon = carrito.items.find(pokemon => pokemon.PokemonModel.id ==  pokemonModel.PokemonModel.id)
+        if(pokemon != null){
+            addItem(pokemon.PokemonModel)
+        }else{
+          let pokemon =  productos.find(pro => pro.PokemonModel.id == pokemonModel.PokemonModel.id)
+          let item = new Procesamiento(pokemon.PokemonModel.id,finalItems,finalPrice)
+          
+          carrito.totalPriceItem.push(item)
+          carrito.items.push(pokemon)
+        }
+        document.body.removeChild(overlay);
+        const slideCarrito = document.querySelector("#carrito-lateral");
+        if (slideCarrito) {
             console.log("paso")
-            document.body.removeChild(carrito);
+            document.body.removeChild(slideCarrito);
         }
         mostrarCarrito()
 
@@ -321,6 +312,8 @@ function mostrarCarrito() {
     itemsContainer.className = "d-flex flex-column gap-3"
     itemsContainer.id = "item";
     carrito.items.forEach((producto) => {
+        let item = carrito.totalPriceItem.find(item => item.id == producto.PokemonModel.id)
+
         const itemContainer = document.createElement("div");
         itemContainer.id = "item-container";
         itemContainer.className = "d-flex gap-5"
@@ -343,15 +336,28 @@ function mostrarCarrito() {
         const disminuirBtn = document.createElement("button");
         disminuirBtn.className = "btn btn-custom";
         disminuirBtn.textContent = "-";
-        disminuirBtn.onclick = () => actualizarCantidad(producto.PokemonModel.id, -1);
+        disminuirBtn.addEventListener("click",(event =>{
+            deleteItem(producto.PokemonModel)
+            const carrito = document.querySelector("#carrito-lateral");
+            document.body.removeChild(carrito);
+            mostrarCarrito()
+        }));
 
         const cantidadText = document.createElement("p");
-        cantidadText.textContent = "1";
+
+        cantidadText.textContent = item.amount;
 
         const aumentarBtn = document.createElement("button");
         aumentarBtn.className = "btn btn-custom";
         aumentarBtn.textContent = "+";
-        aumentarBtn.onclick = () => actualizarCantidad(producto.id, 1);
+        // aumentarBtn.addEventListener = () => addToCarrito(producto.PokemonModel);
+
+        aumentarBtn.addEventListener("click", (event => {
+            addItem(producto.PokemonModel)
+            const carrito = document.querySelector("#carrito-lateral");
+            document.body.removeChild(carrito);
+            mostrarCarrito()
+        }))
 
         cantidadContainer.appendChild(disminuirBtn);
         cantidadContainer.appendChild(cantidadText);
@@ -367,7 +373,7 @@ function mostrarCarrito() {
         priceContainer.id = "price";
         const priceDetails = document.createElement("div");
         const priceText = document.createElement("span");
-        priceText.textContent = `$${producto.PokemonModel.price}`;
+        priceText.textContent = `$${carrito.calcularCantidadItem(producto.PokemonModel.id)}`;
 
         const aEliminar = document.createElement("a");
         aEliminar.href = "#";
@@ -459,6 +465,7 @@ function mostrarCarrito() {
     seguirComprandoLink.href = "#";
     seguirComprandoLink.addEventListener("click", (event => {
         carrito.items.length = 0
+        carrito.totalPriceItem.length = 0
         document.body.removeChild(carritoLateral);
         mostrarCarrito()
 
@@ -484,9 +491,125 @@ function mostrarCarrito() {
     document.body.appendChild(carritoLateral);
     carritoLateral.classList.add("open");
 }
-document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
+function createCatalog(){
+    productos.forEach(pro => {
+
+        const col = document.createElement("li");
+        col.className = "col-12 col-md-6 col-lg-4 mb-cards";
+        col.setAttribute("id", pro.PokemonModel.id)
+    
+    
+    
+        const position = document.createElement("div");
+        position.className = "position-relative";
+        col.append(position)
+    
+    
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "rounded-5 border"
+        position.append(imageContainer)
+    
+    
+        const img = document.createElement("img");
+        img.setAttribute("src", pro.PokemonModel.image)
+        img.className = "img-fluid rounded-5"
+        img.setAttribute("alt", "nft artistico del pokemon " + pro.PokemonModel.name)
+        imageContainer.append(img)
+    
+    
+        const textContainer = document.createElement("div");
+        textContainer.className = "bg-light rounded-5 border position-absolute p-4 shadow info-container"
+        position.append(textContainer)
+    
+    
+        const titleContainer = document.createElement("div")
+        const titulo = document.createElement("h3");
+        titulo.textContent = pro.PokemonModel.name;
+        textContainer.append(titleContainer)
+        titleContainer.append(titulo)
+    
+    
+    
+    
+        const typesContainer = document.createElement("div")
+        typesContainer.className = "d-flex flex-wrap gap-2"
+        titleContainer.append(typesContainer)
+    
+    
+        pro.PokemonModel.pokemonTypes.forEach(type => {
+            const categoria = document.createElement("p");
+            categoria.className = `border ps-3 pe-3 rounded-3 fw-medium ${type.styleClassName}`;
+            categoria.textContent = type.name
+            typesContainer.append(categoria)
+        })
+    
+    
+    
+        const descripcionContainer = document.createElement("div");
+        const descripcion = document.createElement("p");
+        descripcion.textContent = pro.PokemonModel.description;
+        textContainer.append(descripcionContainer)
+        descripcionContainer.append(descripcion)
+    
+    
+        const container = document.createElement("div");
+        container.className = "container mt-4";
+    
+        const priveRow = document.createElement("div");
+        priveRow.className = "row align-items-center gap-2 gap-md-0";
+    
+        const priceCol = document.createElement("div");
+        priceCol.className = "col-4";
+    
+        const priceContainer = document.createElement("div");
+        priceContainer.className = "d-flex flex-column";
+    
+        const priceLabel = document.createElement("span");
+        priceLabel.className = "fw-medium fs-6 m-0 p-0 text-secondary";
+        priceLabel.textContent = "Precio";
+    
+        const priceValue = document.createElement("span");
+        priceValue.className = "fw-medium fs-3";
+        priceValue.textContent = `$${pro.PokemonModel.price}`;
+    
+        priceContainer.appendChild(priceLabel);
+        priceContainer.appendChild(priceValue);
+        priceCol.appendChild(priceContainer);
+    
+        const buttonCol = document.createElement("div");
+        buttonCol.className = "col-12 col-md-8";
+    
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "d-grid gap-2";
+    
+        const buyButton = document.createElement("button");
+        buyButton.className = "btn btn-custom btn-lg";
+        buyButton.textContent = "Comprar";
+        buyButton.onclick = function () {
+            let pokemonId = this.closest("li").getAttribute("id");
+            mostrarModal(productos.find(pro => pro.PokemonModel.id === pokemonId));
+    
+        }
+    
+        buttonContainer.appendChild(buyButton);
+        buttonCol.appendChild(buttonContainer);
+    
+        priveRow.appendChild(priceCol);
+        priveRow.appendChild(buttonCol);
+    
+        container.appendChild(priveRow);
+    
+        textContainer.append(container)
+    
+        listaProductos.appendChild(col);
+    
+    });
+}
 
 function eliminarProducto(pokemonName) {
+
+    let item = carrito.items.find(item => item.PokemonModel.name == pokemonName)
+    carrito.totalPriceItem = carrito.totalPriceItem.filter(producto => producto.id !== item.PokemonModel.id);
 
     carrito.items = carrito.items.filter(producto => producto.PokemonModel.name !== pokemonName);
 }
@@ -521,3 +644,5 @@ function crearItem(clase, titulo, descripcion) {
     }
     return item;
 }
+
+document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
