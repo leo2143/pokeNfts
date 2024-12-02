@@ -4,7 +4,7 @@ import { Procesamiento } from './procesamiento.js';
 import { PokemonModel } from './PokemonModel.js';
 import { PokemonTypeModel } from './PokemonTypeModel.js';
 
-
+ 
 
 /*
  * ORELLANA, LEONARDO
@@ -23,15 +23,15 @@ const acero = new PokemonTypeModel('10', 'Acero', 'bg-steel');
 const lucha = new PokemonTypeModel('11', 'Lucha', 'bg-figther');
 
 
-const pikachu = new PokemonModel('1', 'Pikachu', 'Este Pikachu es curioso y lleno de energía, Le encanta correr y jugar, pero ten cuidado con sus descargas eléctricas cuando se emociona demasiado. Con el compañero adecuado, ¡será el aliado perfecto para cualquier viaje!', '../../imgs/pokemons/pikachu.jpg', [rayo], 500, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
-const blastoise = new PokemonModel('2', 'Blastoise', 'Este Blastoise está listo para defender a su entrenador con sus potentes cañones de agua. Aunque parece serio, le encanta jugar en el agua y hacer pequeños remolinos. Si eres su compañero, prepárate para muchas aventuras acuáticas.', '../imgs/pokemons/blastoice.jpg', [agua], 600, 'Lia Takahashi', 'Muy raro', 'Takahashi', 'No');
-const bulbasur = new PokemonModel('3', 'Bulbasur', 'Este Bulbasaur está lleno de energía y siempre listo para ayudar a su entrenador a crecer. Adora tomar el sol y fortalecer su liana, aunque también disfruta de un buen descanso bajo las hojas. Con paciencia y cuidado, verás cómo florece junto a ti.', '../imgs/pokemons/bulbasur.jpg', [planta, veneno], 321, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
-const charizard = new PokemonModel('4', 'Charizard', 'Este Charizard de espíritu indomable busca un entrenador que pueda igualar su valentía. Su llama arde intensamente, y aunque parece rudo, tiene un lado protector. ¡Solo cuidado con esas alas! A veces le gusta alzar el vuelo sin avisar.', '../imgs/pokemons/charizard.jpg', [fuego, volador], 241, 'Lia Takahashi', 'Epico', 'Takahashi', 'Si');
-const gengar = new PokemonModel('5', 'Gengar', 'Gengar es travieso y siempre está buscando nuevas formas de jugarle bromas a su entrenador. Su risa fantasmal llena el aire, y disfruta desvaneciéndose en las sombras. Con él, tendrás diversión y misterio a partes iguales.', '../imgs/pokemons/gengar.jpg', [fantasma, veneno], 331, 'Hiroshi Sato', 'Epico', 'Sato', 'Si');
-const lucario = new PokemonModel('6', 'Lucario', 'Lucario es leal y siempre está en sintonía con las emociones de su entrenador. Su energía aura lo conecta profundamente con quienes le importan, y está dispuesto a luchar junto a ti. Solo necesita a alguien que comparta su sentido de justicia', '../imgs/pokemons/lucario.jpg', [lucha, acero], 212, 'Hiroshi Sato', 'Ultra rara', 'Sato', 'No');
-const eevee = new PokemonModel('7', 'Eevee', 'Este Eevee es curioso y lleno de energía, siempre listo para explorar y descubrir cosas nuevas. Con su espíritu adaptable, busca un entrenador que lo ayude a crecer y evolucionar. Con amor y cuidado, ¡este Eevee está listo para cualquier aventura!', '../imgs/pokemons/eevee.jpg', [normal], 531, 'Kai Nakamura', 'Comun', 'Nakamura', 'Si');
-const lapras = new PokemonModel('8', 'Lapras', 'Lapras es sereno y le encanta navegar tranquilamente sobre el agua. Es muy protector con aquellos que ama y busca un entrenador que valore la paz y la conexión con la naturaleza. Prepárate para un viaje tranquilo y lleno de armonía a su lado.', '../imgs/pokemons/lapras.jpg', [hielo, agua], 134, 'Kai Nakamura', 'Raro', 'Nakamura', 'Si');
-const garados = new PokemonModel('9', 'Garados', 'Este es un Gyarados feroz y majestuoso, siempre en busca de un entrenador que pueda canalizar su energía desbordante. Le encanta nadar a gran velocidad y causar oleadas en su paso, así que prepárate para tener aventuras emocionantes con él', '../imgs/pokemons/garados.jpg', [agua], 244, 'Kai Nakamura', 'Epico', 'Nakamura', 'No');
+const pikachu = new PokemonModel('1', 'Pikachu', 'Este Pikachu es curioso y lleno de energía, Le encanta correr y jugar, pero ten cuidado con sus descargas eléctricas cuando se emociona demasiado. Con el compañero adecuado, ¡será el aliado perfecto para cualquier viaje!', ['../../imgs/pokemons/pikachu.jpg','../imgs/icons/squirtle_mini_banner.png'], [rayo], 500, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
+const blastoise = new PokemonModel('2', 'Blastoise', 'Este Blastoise está listo para defender a su entrenador con sus potentes cañones de agua. Aunque parece serio, le encanta jugar en el agua y hacer pequeños remolinos. Si eres su compañero, prepárate para muchas aventuras acuáticas.', ['../imgs/pokemons/blastoice.jpg','../imgs/icons/squirtle_mini_banner.png'], [agua], 600, 'Lia Takahashi', 'Muy raro', 'Takahashi', 'No');
+const bulbasur = new PokemonModel('3', 'Bulbasur', 'Este Bulbasaur está lleno de energía y siempre listo para ayudar a su entrenador a crecer. Adora tomar el sol y fortalecer su liana, aunque también disfruta de un buen descanso bajo las hojas. Con paciencia y cuidado, verás cómo florece junto a ti.', ['../imgs/pokemons/bulbasur.jpg','../imgs/icons/squirtle_mini_banner.png'], [planta, veneno], 321, 'Lia Takahashi', 'Raro', 'Takahashi', 'Si');
+const charizard = new PokemonModel('4', 'Charizard', 'Este Charizard de espíritu indomable busca un entrenador que pueda igualar su valentía. Su llama arde intensamente, y aunque parece rudo, tiene un lado protector. ¡Solo cuidado con esas alas! A veces le gusta alzar el vuelo sin avisar.', ['../imgs/pokemons/charizard.jpg','../imgs/icons/squirtle_mini_banner.png'], [fuego, volador], 241, 'Lia Takahashi', 'Epico', 'Takahashi', 'Si');
+const gengar = new PokemonModel('5', 'Gengar', 'Gengar es travieso y siempre está buscando nuevas formas de jugarle bromas a su entrenador. Su risa fantasmal llena el aire, y disfruta desvaneciéndose en las sombras. Con él, tendrás diversión y misterio a partes iguales.', ['../imgs/pokemons/gengar.jpg','../imgs/icons/squirtle_mini_banner.png'], [fantasma, veneno], 331, 'Hiroshi Sato', 'Epico', 'Sato', 'Si');
+const lucario = new PokemonModel('6', 'Lucario', 'Lucario es leal y siempre está en sintonía con las emociones de su entrenador. Su energía aura lo conecta profundamente con quienes le importan, y está dispuesto a luchar junto a ti. Solo necesita a alguien que comparta su sentido de justicia', ['../imgs/pokemons/lucario.jpg','../imgs/icons/squirtle_mini_banner.png'], [lucha, acero], 212, 'Hiroshi Sato', 'Ultra rara', 'Sato', 'No');
+const eevee = new PokemonModel('7', 'Eevee', 'Este Eevee es curioso y lleno de energía, siempre listo para explorar y descubrir cosas nuevas. Con su espíritu adaptable, busca un entrenador que lo ayude a crecer y evolucionar. Con amor y cuidado, ¡este Eevee está listo para cualquier aventura!', ['../imgs/pokemons/eevee.jpg','../imgs/icons/squirtle_mini_banner.png'], [normal], 531, 'Kai Nakamura', 'Comun', 'Nakamura', 'Si');
+const lapras = new PokemonModel('8', 'Lapras', 'Lapras es sereno y le encanta navegar tranquilamente sobre el agua. Es muy protector con aquellos que ama y busca un entrenador que valore la paz y la conexión con la naturaleza. Prepárate para un viaje tranquilo y lleno de armonía a su lado.', ['../imgs/pokemons/lapras.jpg','../imgs/icons/squirtle_mini_banner.png'], [hielo, agua], 134, 'Kai Nakamura', 'Raro', 'Nakamura', 'Si');
+const garados = new PokemonModel('9', 'Garados', 'Este es un Gyarados feroz y majestuoso, siempre en busca de un entrenador que pueda canalizar su energía desbordante. Le encanta nadar a gran velocidad y causar oleadas en su paso, así que prepárate para tener aventuras emocionantes con él', ['../imgs/pokemons/garados.jpg','../imgs/icons/squirtle_mini_banner.png'], [agua], 244, 'Kai Nakamura', 'Epico', 'Nakamura', 'No');
 
 const productos = [
     { PokemonModel: pikachu },
@@ -64,6 +64,12 @@ const listaProductos = document.getElementById("productos");
 createCatalog(productos)
 
 const pokemonTypeSelect = document.getElementById("pokemon-types");
+types.forEach(type => {
+    const option = document.createElement("option");
+    option.textContent = type.PokemonTypeModel.name;
+    option.value = type.PokemonTypeModel.name;
+    pokemonTypeSelect.appendChild(option);
+});
 
 pokemonTypeSelect.addEventListener("change", function () {
   const selectedType = pokemonTypeSelect.value;
@@ -103,9 +109,19 @@ const carrito = {
         return totalPrice;
     },
     calcularCantidad() {
-        return this.items.length;
+        let totalItems = 0;
+        if(this.totalPriceItem.length > 0){
+            this.totalPriceItem.forEach(item => {
+                totalItems = item.amount + totalItems;
+            });
+        }
+ 
+        return totalItems;
     },
 }
+carrito.items =JSON.parse(localStorage.getItem("items")) ?? [];
+carrito.totalPriceItem =JSON.parse(localStorage.getItem("totalPriceItem")) ?? [];
+
 
 function addItem(pokemon){
     let item = carrito.totalPriceItem.find(item => item.id == pokemon.id)
@@ -116,10 +132,10 @@ function addItem(pokemon){
         existingItem.id === item.id ? item : existingItem
     );
     carrito.calcularCantidadItem(pokemon.id)
-    console.log(carrito.totalPriceItem)
-
+    localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
 }
 function deleteItem(pokemon){
+
     let item = carrito.totalPriceItem.find(item => item.id == pokemon.id)
     item.price -= pokemon.price;
     item.amount -= 1;
@@ -127,45 +143,22 @@ function deleteItem(pokemon){
         existingItem.id === item.id ? item : existingItem
     );
     if(item.amount <= 0){
-        console.log("aqui")
         eliminarProducto(pokemon.name)
+        localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
+        localStorage.setItem("items",JSON.stringify(carrito.items));
+
+
     }else{
         carrito.calcularCantidadItem(pokemon.id)
-
-    }
+        localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
+        }
 
   
 
 }
 
-
-function addToCarrito(pokemonId) {
- 
-    //   1--verificar si esta en el carrito
-    //   2--si esta hacer un update
-    //   3--si no esta hacer el push directamente
-
-    const pokemon = carrito.items.find(pokemon => pokemon.PokemonModel.id ==  pokemonId)
-    console.log(pokemon)
-
-    if(pokemon != null){
-        addItem(pokemon.PokemonModel)
-    }else{
-
-      let pokemon =  productos.find(pro => pro.PokemonModel.id === pokemonId)
-
-      let item = new Procesamiento(pokemon.PokemonModel.id,1,pokemon.PokemonModel.price)
-      
-      carrito.totalPriceItem.push(item)
-      carrito.items.push(pokemon)
-
-
-    }
-
-
-}
 function mostrarModal(pokemonModel) {
-    // Crear el overlay de fondo
+    let currentImageIndex = 0;
     var finalPrice = pokemonModel.PokemonModel.price;
     var finalItems =1;
     
@@ -173,7 +166,6 @@ function mostrarModal(pokemonModel) {
     overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0 ";
 
 
-    // Crear el contenedor principal del modal
     const modal = document.createElement("div");
     modal.className = "container modals bg-white position-relative container  position-relative d-flex flex-column gap-5 p-5 rounded-5 border";
     modal.style.overflowY = "auto";
@@ -181,20 +173,50 @@ function mostrarModal(pokemonModel) {
     const imagenAndTitles = document.createElement("div");
     imagenAndTitles.className = "container bg-white container d-flex flex-column flex-lg-row  gap-lg-5"
 
-    // Imagen del producto
     const imageContainer = document.createElement("div");
+    imageContainer.className ="position-relative"
     const img = document.createElement("img");
-    img.setAttribute("src", pokemonModel.PokemonModel.image)
+    img.setAttribute("src", pokemonModel.PokemonModel.image[0])
     img.setAttribute("alt", "nft artistico del pokemon " + pokemonModel.PokemonModel.name)
     img.className = "img-fluid rounded-5 border";
     imageContainer.appendChild(img);
 
-    // Contenedor de información
+    const leftArrow = document.createElement("button");
+    leftArrow.className="position-absolute top-50 start-0 btn btn-custom rounded-pill"
+    leftArrow.textContent="<"
+    leftArrow.addEventListener("click",(event => {
+        currentImageIndex = (currentImageIndex - 1 + pokemonModel.PokemonModel.image.length) % pokemonModel.PokemonModel.image.length;
+        img.setAttribute("src", pokemonModel.PokemonModel.image[currentImageIndex]);
+    }))
+    imageContainer.append(leftArrow)
+
+
+    const rightArrow = document.createElement("button");
+    rightArrow.className="position-absolute top-50 end-0 btn btn-custom rounded-pill"
+    rightArrow.textContent=">"
+    rightArrow.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex + 1) % pokemonModel.PokemonModel.image.length;
+        img.setAttribute("src", pokemonModel.PokemonModel.image[currentImageIndex]);
+    });
+    imageContainer.append(rightArrow)
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+
+            currentImageIndex = (currentImageIndex - 1 + pokemonModel.PokemonModel.image.length) % pokemonModel.PokemonModel.image.length;
+            img.setAttribute("src", pokemonModel.PokemonModel.image[currentImageIndex]);
+        } else if (event.key === "ArrowRight") {
+
+            currentImageIndex = (currentImageIndex + 1) % pokemonModel.PokemonModel.image.length;
+            img.setAttribute("src", pokemonModel.PokemonModel.image[currentImageIndex]);
+        }
+    });
+
+
     const infoContainer = document.createElement("div");
     infoContainer.className = "d-flex flex-column gap-3 mt-2 mt-lg-5";
     infoContainer.style = "min-width:300px"
 
-    // Título contenedor
     const titleContainer = document.createElement("div");
     const title = document.createElement("h2");
     title.textContent = pokemonModel.PokemonModel.name;
@@ -238,9 +260,7 @@ function mostrarModal(pokemonModel) {
         quantity.textContent = c;
         finalItems = c ;
         finalPrice = pokemonModel.PokemonModel.price * c;
-        console.log(c);
         price.textContent = `$${pokemonModel.PokemonModel.price * c}`
-        console.log(finalPrice, finalItems);
 
 
 
@@ -260,7 +280,6 @@ function mostrarModal(pokemonModel) {
         finalPrice = pokemonModel.PokemonModel.price * c;
         quantity.textContent = c; 
         price.textContent = `$${pokemonModel.PokemonModel.price * c}`
-        console.log(finalPrice, finalItems);
 
      }))
     cantidadContainer.appendChild(minusButton);
@@ -281,11 +300,13 @@ function mostrarModal(pokemonModel) {
           
           carrito.totalPriceItem.push(item)
           carrito.items.push(pokemon)
+
+          localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
+          localStorage.setItem("items",JSON.stringify(carrito.items));
         }
         document.body.removeChild(overlay);
         const slideCarrito = document.querySelector("#carrito-lateral");
         if (slideCarrito) {
-            console.log("paso")
             document.body.removeChild(slideCarrito);
         }
         mostrarCarrito()
@@ -340,6 +361,8 @@ function mostrarCarrito() {
     const itemsContainer = document.createElement("div");
     itemsContainer.className = "d-flex flex-column gap-3"
     itemsContainer.id = "item";
+    if(carrito.items.length > 0){
+
     carrito.items.forEach((producto) => {
         let item = carrito.totalPriceItem.find(item => item.id == producto.PokemonModel.id)
 
@@ -348,7 +371,7 @@ function mostrarCarrito() {
         itemContainer.className = "d-flex gap-5"
         const titleContainer = document.createElement("div");
         const img = document.createElement("img");
-        img.src = producto.PokemonModel.image;
+        img.src = producto.PokemonModel.image[0];
         img.alt = `Imagen de ${producto.PokemonModel.name}`;
         img.className = "img-fluid"
         img.style = "width: 90px"
@@ -361,7 +384,7 @@ function mostrarCarrito() {
 
 
         const cantidadContainer = document.createElement("div");
-        cantidadContainer.className = "cantidad d-flex gap-2";
+        cantidadContainer.className = "cantidad d-flex gap-4";
         const disminuirBtn = document.createElement("button");
         disminuirBtn.className = "btn btn-custom";
         disminuirBtn.textContent = "-";
@@ -401,6 +424,7 @@ function mostrarCarrito() {
         priceContainer.className = "d-flex align-items-center justify-content-between";
         priceContainer.id = "price";
         const priceDetails = document.createElement("div");
+        priceDetails.style = "gap:40px;"
         const priceText = document.createElement("span");
         priceText.textContent = `$${carrito.calcularCantidadItem(producto.PokemonModel.id)}`;
 
@@ -408,9 +432,7 @@ function mostrarCarrito() {
         aEliminar.href = "#";
         aEliminar.addEventListener("click", (event => {
             let contenedor = event.target.closest("#item-container");
-            console.log(contenedor)
             const h4 = contenedor.querySelector("h4");
-            console.log(h4)
 
             eliminarProducto(h4.textContent)
             document.body.removeChild(carritoLateral);
@@ -421,7 +443,7 @@ function mostrarCarrito() {
         eliminarIcon.src = "../imgs/icons/delete.svg";
         eliminarIcon.alt = "Eliminar producto";
         eliminarIcon.style.cursor = "pointer";
-        eliminarIcon.style = "width: 40px"
+        eliminarIcon.style = "width: 30px"
 
         eliminarIcon.className = "img-fluid"
         priceDetails.className = "d-flex align-items-center justify-content-between";
@@ -498,6 +520,8 @@ function mostrarCarrito() {
     seguirComprandoLink.addEventListener("click", (event => {
         carrito.items.length = 0
         carrito.totalPriceItem.length = 0
+        localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
+        localStorage.setItem("items",JSON.stringify(carrito.items));
         document.body.removeChild(carritoLateral);
         mostrarCarrito()
 
@@ -512,6 +536,28 @@ function mostrarCarrito() {
     container.append(totalsContainer)
     container.append(buttonsContainer)
     carritoLateral.appendChild(container);
+}else{
+
+    const noItemsContainer = document.createElement("div");
+    noItemsContainer.className= "d-flex flex-column align-items-center gap-2"
+
+    noItemsContainer.style = "margin-top: 30%;"
+    const titleContainer = document.createElement("div");
+    const h3Tittle = document.createElement("h3");
+    h3Tittle.className ="text-center"
+    h3Tittle.textContent ="Todavia no agregaste productos al carrito"
+    titleContainer.append(h3Tittle);
+    noItemsContainer.append(titleContainer)
+    const imageContainer = document.createElement("div");
+    const imagePikachu = document.createElement("img");
+    imagePikachu.src="../imgs/icons/pikachu-sad-fight.gif";
+    imageContainer.append(imagePikachu)
+    noItemsContainer.append(imageContainer)
+
+    carritoLateral.append(noItemsContainer)
+    
+    
+}
 
     const closeButton = document.createElement("button");
     closeButton.className = "close-btn fs-1";
@@ -523,13 +569,13 @@ function mostrarCarrito() {
     document.body.appendChild(carritoLateral);
     carritoLateral.classList.add("open");
 }
+
 function createCatalog(pokemonCatalog){
     const ul = document.getElementById("productos");
     
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
     }
-
 
     pokemonCatalog.forEach(pro => {
 
@@ -550,7 +596,7 @@ function createCatalog(pokemonCatalog){
     
     
         const img = document.createElement("img");
-        img.setAttribute("src", pro.PokemonModel.image)
+        img.setAttribute("src", pro.PokemonModel.image[0])
         img.className = "img-fluid rounded-5"
         img.setAttribute("alt", "nft artistico del pokemon " + pro.PokemonModel.name)
         imageContainer.append(img)
@@ -649,8 +695,10 @@ function eliminarProducto(pokemonName) {
 
     let item = carrito.items.find(item => item.PokemonModel.name == pokemonName)
     carrito.totalPriceItem = carrito.totalPriceItem.filter(producto => producto.id !== item.PokemonModel.id);
-
     carrito.items = carrito.items.filter(producto => producto.PokemonModel.name !== pokemonName);
+
+    localStorage.setItem("totalPriceItem",JSON.stringify(carrito.totalPriceItem));
+    localStorage.setItem("items",JSON.stringify(carrito.items));
 }
 
 
@@ -684,18 +732,24 @@ function crearItem(clase, titulo, descripcion) {
     return item;
 }
 
-document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
+document.getElementById("btn-carrito").addEventListener("click", (event =>{
+
+    const slideCarrito = document.querySelector("#carrito-lateral");
+    if (slideCarrito) {
+        document.body.removeChild(slideCarrito);
+    }
+    mostrarCarrito()
+}));
 
 
 function showCheckoutModal() {
     const overlay = document.createElement("div");
     overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0";
     overlay.style = "background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; z-index: 1050;";
-    overlay.style.overflowY = "auto";
 
     const modal = document.createElement("div");
     modal.className = "container bg-white rounded-3 p-4 shadow-lg position-relative";
-    modal.style = "max-width: 600px;";
+    modal.style = "max-width: 600px; max-height: 600px; overflow: auto;";
 
     const closeButton = document.createElement("button");
     closeButton.className = "btn-close position-absolute top-0 end-0 m-3";
@@ -750,32 +804,35 @@ function showCheckoutModal() {
 
         if( paymentMethodField.value == "Tarjeta de Crédito"){
             const installmentContainer = document.createElement("div");
-            const cardNumber = createFormGroup("numero de tarjeta", "text", "cardNumber",true);
-            const cvc = createFormGroup("cvc", "text", "cvc",true);
-            const expirationDate = createFormGroup("fecha de expiracion", "date", "expirationDate",true);
-            const cardName = createFormGroup("nombre del titular", "text", "cardName",true);
-            const cbu = document.getElementById("container-cbu",true);
+            installmentContainer.id = "installments-container";
+            let cardNumber = createFormGroup("numero de tarjeta", "text", "cardNumber",true);
+            let cvc = createFormGroup("cvc", "text", "cvc",true);
+            let expirationDate = createFormGroup("fecha de expiracion", "date", "expirationDate",true);
+            let cardName = createFormGroup("nombre del titular", "text", "cardName",true);
+            let cbu = document.getElementById("container-cbu");
             cbu.remove();
-            installmentContainer.append(installmentSelect,cardName,cardNumber,cvc,expirationDate)
-            paymentInfoContainer.append(installmentContainer)
+            installmentContainer.append(installmentSelect,cardName,cardNumber,cvc,expirationDate);
+            paymentInfoContainer.append(installmentContainer);
             }
         if(paymentMethodField.value == "Transferencia Bancaria"){
-            const cbuGroup = createFormGroup("Cbu", "cbu", "cbu",true);
-            const installmentSelect = document.getElementById("installments-container");
+            let installmentSelect = document.getElementById("installments-container");
             installmentSelect.remove();
 
-            const cbuInput = cbuGroup.querySelector("input");
+            let cbuContainer = document.createElement("div");
+            cbuContainer.id = "container-cbu";
+
+            let cbuGroup = createFormGroup("Cbu", "cbu", "cbu",true);
+      
+            let cbuInput = cbuGroup.querySelector("input");
             cbuInput.addEventListener("input", (event) =>{
                 const campo = event.currentTarget;
                 campo.setCustomValidity("");
-                console.log(campo.value.length)
 
                 if(campo.value.length < 22 || campo.value.length > 22){
-                    console.log("here")
                     campo.setCustomValidity("el cbu debe tener una longitud de 22");
                 }
             })
-            paymentInfoContainer.append(cbuGroup)
+            paymentInfoContainer.append(cbuContainer);
         }
       });
 
@@ -840,7 +897,6 @@ function createFormGroup(labelText, inputType, inputId,required) {
 
     input.addEventListener("input",(event) =>{
         input.setCustomValidity("")
-        console.log(event.currentTarget.value.length)
         if(event.currentTarget.value.length <= 0){
             input.setCustomValidity("el campo no puede estar vacio")
         }
@@ -877,7 +933,6 @@ function createSelectGroup(labelText, selectId, options) {
 
 function createFloatingBanner() {
     const randomNumber = Math.floor(Math.random() * (types.length - 1)) + 1;
-    console.log(randomNumber)
 
    let type = types.find(types => types.PokemonTypeModel.id == randomNumber);
    let name = type.PokemonTypeModel.name;
@@ -895,7 +950,6 @@ function createFloatingBanner() {
     bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemoms tipo ${type.PokemonTypeModel.name}`;
     bannerText.className = "m-0";
     bannerText.addEventListener("click",(event =>{
-        console.log("here")
         mostrarModal(filteredPokemon)
 
     }))
