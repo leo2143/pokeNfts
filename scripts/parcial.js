@@ -44,11 +44,44 @@ const productos = [
     { PokemonModel: lapras },
     { PokemonModel: garados }
 ];
+const types =[
+    { PokemonTypeModel: rayo },
+    { PokemonTypeModel: agua },
+    { PokemonTypeModel: normal },
+    { PokemonTypeModel: planta },
+    { PokemonTypeModel: veneno },
+    { PokemonTypeModel: fuego },
+    { PokemonTypeModel: volador },
+    { PokemonTypeModel: fantasma },
+    { PokemonTypeModel: hielo },
+    { PokemonTypeModel: acero },
+    { PokemonTypeModel: lucha }
 
+]
 const listaProductos = document.getElementById("productos");
 
-createCatalog()
 
+createCatalog(productos)
+
+const pokemonTypeSelect = document.getElementById("pokemon-types");
+
+pokemonTypeSelect.addEventListener("change", function () {
+  const selectedType = pokemonTypeSelect.value;
+  filterProductsBy(selectedType);
+});
+
+
+function filterProductsBy(pokemonTypeName){
+
+        if(pokemonTypeName != "restablecer"){
+            let filteredPokemon = productos.filter(pokemon =>pokemon.PokemonModel.pokemonTypes.some(type => type.name == pokemonTypeName));
+            createFloatingBanner()
+            createCatalog(filteredPokemon)
+        }else{
+            createCatalog(productos)
+        }
+        
+}
 
 const carrito = {
     items: [],
@@ -61,9 +94,12 @@ const carrito = {
 
     calcularTotal() {
         let totalPrice = 0;
-        this.totalPriceItem.forEach(item => {
-            totalPrice = item.price + totalPrice;
-        });
+        if(this.totalPriceItem.length >0){
+            this.totalPriceItem.forEach(item => {
+                totalPrice = item.price + totalPrice;
+            });
+        }
+ 
         return totalPrice;
     },
     calcularCantidad() {
@@ -130,8 +166,9 @@ function addToCarrito(pokemonId) {
 }
 function mostrarModal(pokemonModel) {
     // Crear el overlay de fondo
-    var finalPrice = null;
-    var finalItems =null;
+    var finalPrice = pokemonModel.PokemonModel.price;
+    var finalItems =1;
+    
     const overlay = document.createElement("div");
     overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0 ";
 
@@ -183,12 +220,10 @@ function mostrarModal(pokemonModel) {
     textContainer.append(p)
 
 
-    // Precio
     const price = document.createElement("p");
     price.className = "fs-4"
     price.textContent = `$${pokemonModel.PokemonModel.price}`;
 
-    // Contenedor de cantidad
     const cantidadContainer = document.createElement("div");
     cantidadContainer.className = "cantidad d-flex gap-2   text-center";
     const minusButton = document.createElement("button");
@@ -232,7 +267,6 @@ function mostrarModal(pokemonModel) {
     cantidadContainer.appendChild(quantity);
     cantidadContainer.appendChild(plusButton);
 
-    // Botón "Agregar al carrito"
     const addToCartButton = document.createElement("button");
     addToCartButton.textContent = "Agregar al carrito";
     addToCartButton.className = "btn btn-custom btn-lg";
@@ -259,7 +293,6 @@ function mostrarModal(pokemonModel) {
     }
 
 
-    // Botón de cierre
     const closeButton = document.createElement("button");
     closeButton.className = "btn-close position-absolute fs-4 text-white";
     closeButton.style.position = "absolute";
@@ -268,7 +301,6 @@ function mostrarModal(pokemonModel) {
         document.body.removeChild(overlay);
     };
 
-    // Agregar los elementos al modal
     infoContainer.appendChild(titleContainer);
     infoContainer.appendChild(price);
     infoContainer.appendChild(cantidadContainer);
@@ -280,16 +312,13 @@ function mostrarModal(pokemonModel) {
     imagenAndTitles.appendChild(closeButton)
 
 
-    // infoContainer.appendChild(detailLink);
     modal.appendChild(imagenAndTitles);
     modal.appendChild(textContainer);
 
     modal.appendChild(container);
 
-    // Agregar el modal al overlay
     overlay.appendChild(modal);
 
-    // Agregar el overlay al body
     document.body.appendChild(overlay);
 }
 
@@ -459,7 +488,10 @@ function mostrarCarrito() {
     const comprarButton = document.createElement("button");
     comprarButton.textContent = "Iniciar compra";
     comprarButton.className = "btn btn-custom btn-lg w-100"
-    comprarButton.onclick = () => alert("Iniciando compra...");
+    comprarButton.addEventListener("click",(event =>{
+
+        showCheckoutModal()
+    }));
     const seguirComprandoLink = document.createElement("a");
     seguirComprandoLink.textContent = "Vaciar carrito";
     seguirComprandoLink.href = "#";
@@ -491,8 +523,15 @@ function mostrarCarrito() {
     document.body.appendChild(carritoLateral);
     carritoLateral.classList.add("open");
 }
-function createCatalog(){
-    productos.forEach(pro => {
+function createCatalog(pokemonCatalog){
+    const ul = document.getElementById("productos");
+    
+    while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+    }
+
+
+    pokemonCatalog.forEach(pro => {
 
         const col = document.createElement("li");
         col.className = "col-12 col-md-6 col-lg-4 mb-cards";
@@ -646,3 +685,241 @@ function crearItem(clase, titulo, descripcion) {
 }
 
 document.getElementById("btn-carrito").addEventListener("click", mostrarCarrito);
+
+
+function showCheckoutModal() {
+    const overlay = document.createElement("div");
+    overlay.className = "overlay position-fixed d-flex align-items-center justify-content-center top-0";
+    overlay.style = "background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; z-index: 1050;";
+    overlay.style.overflowY = "auto";
+
+    const modal = document.createElement("div");
+    modal.className = "container bg-white rounded-3 p-4 shadow-lg position-relative";
+    modal.style = "max-width: 600px;";
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "btn-close position-absolute top-0 end-0 m-3";
+    closeButton.style = "font-size: 1.5rem;";
+    closeButton.onclick = () => document.body.removeChild(overlay);
+
+    const title = document.createElement("h2");
+    title.textContent = "Checkout";
+    title.className = "text-center mb-4";
+
+    
+    const form = document.createElement("form");
+    form.action= "#"
+    form.method="post"  
+
+    const clientInfoTitle = document.createElement("h3");
+    clientInfoTitle.textContent = "Información del Cliente";
+    clientInfoTitle.className = "mb-3";
+
+    const nameInput = createFormGroup("Nombre", "text", "name",true);
+    const emailInput = createFormGroup("Email", "email", "email",true);
+    const phoneInput = createFormGroup("Teléfono", "tel", "phone",true);
+    const emailField = emailInput.querySelector("input");
+
+    emailField.addEventListener("input", (event) =>{
+        const campo = event.currentTarget;
+
+        campo.setCustomValidity("");
+       
+        if(!campo.value.includes("@")){
+            campo.setCustomValidity("Debes ingresar un correo valido");
+        }
+    })
+    const paymentInfoContainer = document.createElement("div");
+    const paymentInfoTitle = document.createElement("h3");
+    paymentInfoTitle.textContent = "Información de Pago";
+    paymentInfoTitle.className = "mt-4 mb-3";
+
+    const paymentMethodSelect = createSelectGroup("Método de Pago", "payment-method", ["Tarjeta de Crédito", "Transferencia Bancaria"],true);
+    const installmentSelect = createSelectGroup("Cuotas", "installments", ["6 Cuotas", "12 Cuotas"],true);
+    const installmentContainer = document.createElement("div");
+    installmentContainer.id = "installments-container";
+    const cardNumber = createFormGroup("numero de tarjeta", "text", "cardNumber",true);
+    const cvc = createFormGroup("cvc", "text", "cvc",true);
+    const expirationDate = createFormGroup("fecha de expiracion", "date", "expirationDate",true);
+    const cardName = createFormGroup("nombre del titular", "text", "cardName",true);
+
+    installmentContainer.append(installmentSelect,cardName,cardNumber,cvc,expirationDate)
+    paymentInfoContainer.append(paymentInfoTitle,paymentMethodSelect,installmentContainer)
+    let paymentMethodField = paymentMethodSelect.querySelector("select");
+    paymentMethodField.addEventListener("change", function () {
+
+        if( paymentMethodField.value == "Tarjeta de Crédito"){
+            const installmentContainer = document.createElement("div");
+            const cardNumber = createFormGroup("numero de tarjeta", "text", "cardNumber",true);
+            const cvc = createFormGroup("cvc", "text", "cvc",true);
+            const expirationDate = createFormGroup("fecha de expiracion", "date", "expirationDate",true);
+            const cardName = createFormGroup("nombre del titular", "text", "cardName",true);
+            const cbu = document.getElementById("container-cbu",true);
+            cbu.remove();
+            installmentContainer.append(installmentSelect,cardName,cardNumber,cvc,expirationDate)
+            paymentInfoContainer.append(installmentContainer)
+            }
+        if(paymentMethodField.value == "Transferencia Bancaria"){
+            const cbuGroup = createFormGroup("Cbu", "cbu", "cbu",true);
+            const installmentSelect = document.getElementById("installments-container");
+            installmentSelect.remove();
+
+            const cbuInput = cbuGroup.querySelector("input");
+            cbuInput.addEventListener("input", (event) =>{
+                const campo = event.currentTarget;
+                campo.setCustomValidity("");
+                console.log(campo.value.length)
+
+                if(campo.value.length < 22 || campo.value.length > 22){
+                    console.log("here")
+                    campo.setCustomValidity("el cbu debe tener una longitud de 22");
+                }
+            })
+            paymentInfoContainer.append(cbuGroup)
+        }
+      });
+
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.className = "d-flex justify-content-between mt-4";
+
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancelar";
+    cancelButton.className = "btn btn-secondary";
+    cancelButton.type = "button";
+    cancelButton.onclick = () => document.body.removeChild(overlay);
+
+    
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Finalizar compra";
+    confirmButton.className = "btn btn-primary";
+    confirmButton.type = "submit";
+
+
+    confirmButton.addEventListener('click',(event =>{
+
+        if(!form.checkValidity()){
+            event.preventDefault();
+            form.reportValidity(); 
+            return;
+        }
+
+        document.body.removeChild(overlay)
+        const slideCarrito = document.querySelector("#carrito-lateral");      
+        slideCarrito.remove();  
+        carrito.items.length = 0;
+        carrito.totalPriceItem.length = 0;
+    }))
+
+    buttonsContainer.append(cancelButton, confirmButton);
+
+    form.append(clientInfoTitle, nameInput, phoneInput, emailInput, paymentInfoContainer, buttonsContainer);
+
+    modal.append(closeButton, title, form);
+
+    overlay.appendChild(modal);
+
+    document.body.appendChild(overlay);
+
+}
+
+function createFormGroup(labelText, inputType, inputId,required) {
+    const group = document.createElement("div");
+    group.id="container-" + inputId;
+    group.className = "mb-3";
+
+    const label = document.createElement("label");
+    label.textContent = labelText;
+    label.setAttribute("for", inputId);
+    label.className = "form-label";
+
+    const input = document.createElement("input");
+    input.required = required
+    input.type = inputType;
+    input.id = inputId;
+    input.className = "form-control";
+
+    input.addEventListener("input",(event) =>{
+        input.setCustomValidity("")
+        console.log(event.currentTarget.value.length)
+        if(event.currentTarget.value.length <= 0){
+            input.setCustomValidity("el campo no puede estar vacio")
+        }
+})
+
+    group.append(label, input);
+    return group;
+}
+
+function createSelectGroup(labelText, selectId, options) {
+    const group = document.createElement("div");
+    group.className = "mb-3";
+    group.id="container-" + selectId;
+ 
+    const label = document.createElement("label");
+    label.textContent = labelText;
+    label.setAttribute("for", selectId);
+    label.className = "form-label";
+
+    const select = document.createElement("select");
+    select.id = selectId;
+    select.className = "form-select";
+
+    options.forEach(optionText => {
+        const option = document.createElement("option");
+        option.textContent = optionText;
+        option.value = optionText;
+        select.appendChild(option);
+    });
+
+    group.append(label, select);
+    return group;
+}
+
+function createFloatingBanner() {
+    const randomNumber = Math.floor(Math.random() * (types.length - 1)) + 1;
+    console.log(randomNumber)
+
+   let type = types.find(types => types.PokemonTypeModel.id == randomNumber);
+   let name = type.PokemonTypeModel.name;
+   let filteredPokemon = productos.filter(pokemon =>pokemon.PokemonModel.pokemonTypes.some(type => type.name == name));
+
+   filteredPokemon = filteredPokemon[0];
+
+    // Crear el contenedor del banner
+    const banner = document.createElement("div");
+    banner.className = "floating-banner position-fixed top-0 w-100 d-flex align-items-center justify-content-between px-4 py-3 " + type.PokemonTypeModel.styleClassName;
+    banner.style = "z-index: 1000; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);";
+
+    // Texto del banner
+    const bannerText = document.createElement("a");
+    bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemoms tipo ${type.PokemonTypeModel.name}`;
+    bannerText.className = "m-0";
+    bannerText.addEventListener("click",(event =>{
+        console.log("here")
+        mostrarModal(filteredPokemon)
+
+    }))
+    // Botón de cerrar
+    const closeButton = document.createElement("button");
+    closeButton.className = "btn-close btn-close-white";
+    closeButton.style = "font-size: 1.5rem;";
+    closeButton.onclick = () => document.body.removeChild(banner);
+
+    // Agregar elementos al banner
+    banner.appendChild(bannerText);
+    banner.appendChild(closeButton);
+
+    // Agregar el banner al body
+    document.body.appendChild(banner);
+
+    setTimeout(() => {
+        if (document.body.contains(banner)) {
+            document.body.removeChild(banner);
+        }
+    }, 10000);
+}
+
+
+
+
+
