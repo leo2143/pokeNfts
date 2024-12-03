@@ -145,7 +145,7 @@ function toggleCarrito() {
             imgCarrito.alt = "carrito";
 
             let counterContainer = document.createElement("div");
-            counterContainer.className = "position-absolute border rounded-pill bg-white top-0 d-flex align-items-center justify-content-center";
+            counterContainer.className = "position-absolute border rounded-pill bg-call-to-action top-0 d-flex align-items-center justify-content-center";
             counterContainer.style = "width:25px; left:25px"
             let p = document.createElement("p");
             p.id = "counter-carrito";
@@ -180,7 +180,7 @@ function toggleCarrito() {
             imgCarrito.alt = "carrito";
 
             let counterContainer = document.createElement("div");
-            counterContainer.className = "position-absolute border rounded-pill bg-white top-0 d-flex align-items-center justify-content-center";
+            counterContainer.className = "position-absolute border rounded-pill bg-call-to-action top-0 d-flex align-items-center justify-content-center";
             counterContainer.style = "width:25px; left:25px"
             let p = document.createElement("p");
             p.id = "counter-carrito";
@@ -199,10 +199,8 @@ function toggleCarrito() {
 }
 
 
-// Llama a la función al cargar la página para configurar correctamente
 toggleCarrito();
 
-// Escucha cambios de tamaño de pantalla
 window.addEventListener("resize", toggleCarrito);
 
 function addItem(pokemon){
@@ -843,7 +841,7 @@ function showCheckoutModal() {
 
     const title = document.createElement("h2");
     title.textContent = "Checkout";
-    title.className = "text-center mb-4";
+    title.className = "text-center mb-4 bg-call-to-action-text";
 
     
     const form = document.createElement("form");
@@ -1033,7 +1031,7 @@ function createFloatingBanner() {
 
     // Texto del banner
     const bannerText = document.createElement("a");
-    bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemoms tipo ${type.PokemonTypeModel.name}`;
+    bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemons tipo ${type.PokemonTypeModel.name}`;
     bannerText.className = "m-0";
     bannerText.addEventListener("click",(event =>{
         mostrarModal(filteredPokemon)
