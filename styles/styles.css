@@ -313,6 +313,9 @@ filter: blur(45px);
 .carrito-lateral h2 {
     margin-bottom: 20px;
 }
+.fixed-top{
+    z-index: 999;
+}
 
 .carrito-lateral .close-btn {
     position: absolute;
@@ -323,7 +326,9 @@ filter: blur(45px);
     font-size: 1.5rem;
     cursor: pointer;
 }
-
+#counter-carrito{
+    margin: 0;
+}
 
 @media (min-width: 400px) {
     .mb-cards {
