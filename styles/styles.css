@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
 :root {
 
     --font-color-pokeNfts: rgb(51 43 43);
@@ -11,10 +16,19 @@
     --bs-accordion-bg: unset;
 
 }
+ul {
+    list-style-type: none;   /* Quita los puntos o numeración */
+    padding: 0;              /* Elimina el padding predeterminado */
+    margin: 0;               /* Elimina el margen predeterminado */
+  }
+  
+  li {
+    list-style-type: none;   /* Asegura que los <li> no tengan estilo de lista */
+    padding: 0;              /* Elimina cualquier padding adicional */
+    margin: 0;               /* Elimina cualquier margen adicional */
+  }
 
-a:hover {
-    color: red;
-}
+
 
 .bg-grass {
     background-color: #7c5;
@@ -262,6 +276,58 @@ top: 10px;
 bottom: 10px;
 background: rgba(255, 232, 209, 0.394);
 filter: blur(45px);
+}
+.overlay{
+   width : 100%;
+   height:100%;
+   background-color:rgba(0, 0, 0, 0.5);
+}
+.modals {
+    max-width:  800px;
+ }
+
+ .btn-close{
+    top : 10px;
+    right : 10px;
+    cursor : pointer;
+ }
+
+ .carrito-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.carrito-lateral.open {
+    right: 0;
+}
+
+.carrito-lateral h2 {
+    margin-bottom: 20px;
+}
+.fixed-top{
+    z-index: 999;
+}
+
+.carrito-lateral .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+#counter-carrito{
+    margin: 0;
 }
 
 @media (min-width: 400px) {
