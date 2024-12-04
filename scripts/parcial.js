@@ -436,7 +436,6 @@ function mostrarCarrito() {
     const carritoLateral = document.createElement("div");
     carritoLateral.id = "carrito-lateral";
     carritoLateral.className = "carrito-lateral container ";
-    carritoLateral.style = "min-width: 460px"
 
     const container = document.createElement("div");
     container.className = "d-flex flex-column gap-4"
@@ -456,7 +455,7 @@ function mostrarCarrito() {
 
         const itemContainer = document.createElement("div");
         itemContainer.id = "item-container";
-        itemContainer.className = "d-flex gap-5"
+        itemContainer.className = "d-flex gap-2 gap-md-5"
         const titleContainer = document.createElement("div");
         const img = document.createElement("img");
         img.src = producto.PokemonModel.image[0];
