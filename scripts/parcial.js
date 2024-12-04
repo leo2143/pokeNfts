@@ -301,7 +301,7 @@ function mostrarModal(pokemonModel) {
 
     const infoContainer = document.createElement("div");
     infoContainer.className = "d-flex flex-column gap-3 mt-2 mt-lg-5";
-    infoContainer.style = "min-width:300px"
+    infoContainer.style = "min-width:200px"
 
     const titleContainer = document.createElement("div");
     const title = document.createElement("h2");
