@@ -145,7 +145,7 @@ function toggleCarrito() {
             imgCarrito.alt = "carrito";
 
             let counterContainer = document.createElement("div");
-            counterContainer.className = "position-absolute border rounded-pill bg-white top-0 d-flex align-items-center justify-content-center";
+            counterContainer.className = "position-absolute border rounded-pill bg-call-to-action top-0 d-flex align-items-center justify-content-center";
             counterContainer.style = "width:25px; left:25px"
             let p = document.createElement("p");
             p.id = "counter-carrito";
@@ -180,7 +180,7 @@ function toggleCarrito() {
             imgCarrito.alt = "carrito";
 
             let counterContainer = document.createElement("div");
-            counterContainer.className = "position-absolute border rounded-pill bg-white top-0 d-flex align-items-center justify-content-center";
+            counterContainer.className = "position-absolute border rounded-pill bg-call-to-action top-0 d-flex align-items-center justify-content-center";
             counterContainer.style = "width:25px; left:25px"
             let p = document.createElement("p");
             p.id = "counter-carrito";
@@ -199,10 +199,8 @@ function toggleCarrito() {
 }
 
 
-// Llama a la función al cargar la página para configurar correctamente
 toggleCarrito();
 
-// Escucha cambios de tamaño de pantalla
 window.addEventListener("resize", toggleCarrito);
 
 function addItem(pokemon){
@@ -438,7 +436,6 @@ function mostrarCarrito() {
     const carritoLateral = document.createElement("div");
     carritoLateral.id = "carrito-lateral";
     carritoLateral.className = "carrito-lateral container ";
-    carritoLateral.style = "min-width: 460px"
 
     const container = document.createElement("div");
     container.className = "d-flex flex-column gap-4"
@@ -458,7 +455,7 @@ function mostrarCarrito() {
 
         const itemContainer = document.createElement("div");
         itemContainer.id = "item-container";
-        itemContainer.className = "d-flex gap-5"
+        itemContainer.className = "d-flex gap-2 gap-md-5"
         const titleContainer = document.createElement("div");
         const img = document.createElement("img");
         img.src = producto.PokemonModel.image[0];
@@ -843,7 +840,7 @@ function showCheckoutModal() {
 
     const title = document.createElement("h2");
     title.textContent = "Checkout";
-    title.className = "text-center mb-4";
+    title.className = "text-center mb-4 bg-call-to-action-text";
 
     
     const form = document.createElement("form");
@@ -1033,7 +1030,7 @@ function createFloatingBanner() {
 
     // Texto del banner
     const bannerText = document.createElement("a");
-    bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemoms tipo ${type.PokemonTypeModel.name}`;
+    bannerText.textContent =  `¡Haz click aqui y Aprovecha un 50% off en pokemons tipo ${type.PokemonTypeModel.name}`;
     bannerText.className = "m-0";
     bannerText.addEventListener("click",(event =>{
         mostrarModal(filteredPokemon)
